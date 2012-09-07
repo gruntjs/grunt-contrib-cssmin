@@ -1,0 +1,41 @@
+{
+  "name": "grunt-contrib-mincss",
+  "description": "Compress CSS files.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gruntjs/grunt-contrib-mincss",
+  "author": {
+    "name": "Tyler Kellen",
+    "url": "http://goingslowly.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gruntjs/grunt-contrib-mincss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gruntjs/grunt-contrib-mincss/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/gruntjs/grunt-contrib-mincss/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt-contrib-lib": "~0.1.0",
+    "clean-css": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.15",
+    "grunt-contrib-clean": "~0.1.0"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
