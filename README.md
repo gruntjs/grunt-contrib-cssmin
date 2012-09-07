@@ -2,7 +2,7 @@
 > Compress CSS files (part of the [grunt-contrib](/gruntjs/grunt-contrib) collection).  Submitted by [Tim Branyen Kellen](/tbranyen).
 
 ## Getting Started
-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-contrib-less`
+Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-contrib-mincss`
 
 Then add this line to your project's `grunt.js` gruntfile:
 
