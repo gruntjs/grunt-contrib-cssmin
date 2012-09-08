@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "clean-css": "~0.4.1",
-    "grunt-contrib-lib": "~0.1.0",
-    "grunt-contrib-clean": "~0.1.0"
+    "grunt-contrib-lib": "~0.2.0",
+    "grunt-contrib-clean": "~0.2.0"
   },
   "devDependencies": {
     "grunt": "~0.3.15"
