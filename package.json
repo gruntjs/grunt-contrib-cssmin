@@ -1,11 +1,11 @@
 {
   "name": "grunt-contrib-mincss",
   "description": "Compress CSS files.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/gruntjs/grunt-contrib-mincss",
   "author": {
-    "name": "Tyler Kellen",
-    "url": "http://goingslowly.com/"
+    "name": "Tim Branyen",
+    "url": "http://tbranyen.com/"
   },
   "repository": {
     "type": "git",

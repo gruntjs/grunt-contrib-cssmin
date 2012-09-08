@@ -64,5 +64,4 @@ module.exports = function(grunt) {
 
   // By default, lint and run all tests.
   grunt.registerTask('default', 'lint test');
-
 };

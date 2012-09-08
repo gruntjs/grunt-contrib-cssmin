@@ -8,14 +8,14 @@
  */
 
 module.exports = function(grunt) {
-  "use strict";
+  'use strict';
 
   var helpers = require('grunt-contrib-lib').init(grunt);
 
-  grunt.registerMultiTask("mincss", "Minify CSS files", function() {
+  grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
     var options = helpers.options(this);
 
-    grunt.verbose.writeflags(options, "Options");
+    grunt.verbose.writeflags(options, 'Options');
 
     // TODO: ditch this when grunt v0.4 is released
     this.files = this.files || helpers.normalizeMultiTaskFiles(this.data, this.target);
@@ -26,23 +26,23 @@ module.exports = function(grunt) {
 
     this.files.forEach(function(file) {
       srcFiles = grunt.file.expandFiles(file.src);
-      sourceCode = grunt.helper("concat", srcFiles);
-      taskOutput = grunt.helper("mincss", sourceCode);
+      sourceCode = grunt.helper('concat', srcFiles);
+      taskOutput = minifyCSS(sourceCode);
 
       if (taskOutput.length > 0) {
         grunt.file.write(file.dest, taskOutput);
-        grunt.log.writeln("File '" + file.dest + "' created.");
+        grunt.log.writeln('File ' + file.dest + ' created.');
         grunt.helper('min_max_info', taskOutput, sourceCode);
       }
     });
   });
 
-  grunt.registerHelper("mincss", function(source) {
+  var minifyCSS = function(source) {
     try {
-      return require("clean-css").process(source);
+      return require('clean-css').process(source);
     } catch (e) {
       grunt.log.error(e);
-      grunt.fail.warn("css minification failed.");
+      grunt.fail.warn('css minification failed.');
     }
-  });
+  };
 };
