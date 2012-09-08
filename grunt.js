@@ -12,10 +12,10 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    // JSHint files and options.
     lint: {
       all: ['grunt.js', 'tasks/*.js', '<config:nodeunit.tasks>']
     },
+
     jshint: {
       options: {
         curly: true,
@@ -32,19 +32,21 @@ module.exports = function(grunt) {
         es5: true
       }
     },
+
     // Before generating any new files, remove any previously-created files.
     clean: {
       test: ['tmp']
     },
-    // Configuration to be run and then tested. All files will be created in
-    // the local "tmp" directory.
+
+    // Configuration to be run (and then tested).
     mincss: {
       compress: {
         files: {
-          "tmp/style.css": ["test/fixtures/input_one.css", "test/fixtures/input_two.css"]
+          'tmp/style.css': ['test/fixtures/input_one.css', 'test/fixtures/input_two.css']
         }
       }
     },
+
     // Unit tests.
     nodeunit: {
       tasks: ['test/*_test.js']
@@ -57,7 +59,7 @@ module.exports = function(grunt) {
   // The clean plugin helps in testing.
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  // Whenever the "test" task is run, first clean the "tmp" dir, then run this
+  // Whenever the 'test' task is run, first clean the 'tmp' dir, then run this
   // plugin's task(s), then test the result.
   grunt.renameTask('test', 'nodeunit');
   grunt.registerTask('test', 'clean mincss nodeunit');
