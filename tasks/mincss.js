@@ -11,7 +11,6 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
-
     var helpers = require('grunt-contrib-lib').init(grunt);
     var options = helpers.options(this);
 
@@ -21,18 +20,33 @@ module.exports = function(grunt) {
     this.files = this.files || helpers.normalizeMultiTaskFiles(this.data, this.target);
 
     var srcFiles;
-    var taskOutput;
+    var taskOutputMin;
+    var taskOutputMax;
     var sourceCode;
+    var sourceCompressed;
 
     this.files.forEach(function(file) {
       srcFiles = grunt.file.expandFiles(file.src);
-      sourceCode = grunt.helper('concat', srcFiles);
-      taskOutput = minifyCSS(sourceCode);
 
-      if (taskOutput.length > 0) {
-        grunt.file.write(file.dest, taskOutput);
+      taskOutputMin = [];
+      taskOutputMax = [];
+
+      srcFiles.forEach(function(srcFile) {
+        sourceCode = grunt.file.read(srcFile);
+        sourceCompressed = minifyCSS(sourceCode);
+
+        taskOutputMin.push(sourceCompressed);
+        taskOutputMax.push(sourceCode);
+      });
+
+      if (taskOutputMin.length > 0) {
+        taskOutputMin = taskOutputMin.join('');
+        taskOutputMax = taskOutputMax.join('');
+
+        grunt.file.write(file.dest, taskOutputMin);
         grunt.log.writeln('File ' + file.dest + ' created.');
-        grunt.helper('min_max_info', taskOutput, sourceCode);
+
+        minMaxInfo(taskOutputMin, taskOutputMax);
       }
     });
   });
@@ -44,5 +58,15 @@ module.exports = function(grunt) {
       grunt.log.error(e);
       grunt.fail.warn('css minification failed.');
     }
+  };
+
+  var minMaxGzip = function(src) {
+    return src ? require('gzip-js').zip(src, {}) : '';
+  };
+
+  var minMaxInfo = function(min, max) {
+    var gzipSize = String(minMaxGzip(min).length);
+    grunt.log.writeln('Uncompressed size: ' + String(max.length).green + ' bytes.');
+    grunt.log.writeln('Compressed size: ' + gzipSize.green + ' bytes gzipped (' + String(min.length).green + ' bytes minified).');
   };
 };
