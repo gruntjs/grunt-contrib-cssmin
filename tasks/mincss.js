@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 
       if (taskOutputMin.length > 0) {
         taskOutputMin = taskOutputMin.join('');
-        taskOutputMax = taskOutputMax.join('');
+        taskOutputMax = taskOutputMax.join('\n');
 
         grunt.file.write(file.dest, taskOutputMin);
         grunt.log.writeln('File ' + file.dest + ' created.');
