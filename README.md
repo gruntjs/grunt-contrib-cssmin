@@ -1,4 +1,4 @@
-# grunt-contrib-mincss
+# grunt-contrib-mincss [![Build Status](https://secure.travis-ci.org/gruntjs/grunt-contrib-mincss.png?branch=master)](http://travis-ci.org/gruntjs/grunt-contrib-mincss)
 > Compress CSS files (part of the [grunt-contrib](https://github.com/gruntjs/grunt-contrib) collection). Submitted by [Tim Branyen](https://github.com/tbranyen).
 
 ## Getting Started
