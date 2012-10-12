@@ -10,7 +10,7 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
-    var helpers = require('grunt-contrib-lib').init(grunt);
+    var helpers = require('grunt-lib-contrib').init(grunt);
     var options = helpers.options(this);
 
     grunt.verbose.writeflags(options, 'Options');
