@@ -6,23 +6,15 @@
  * Licensed under the MIT license.
  */
 
+'use strict';
+
 module.exports = function(grunt) {
-  'use strict';
 
   grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
-    var helpers = require('grunt-lib-contrib').init(grunt);
-    var options = helpers.options(this);
+    var srcFiles, taskOutputMin, taskOutputMax, sourceCode, sourceCompressed;
 
+    var options = this.options();
     grunt.verbose.writeflags(options, 'Options');
-
-    // TODO: ditch this when grunt v0.4 is released
-    this.files = this.files || helpers.normalizeMultiTaskFiles(this.data, this.target);
-
-    var srcFiles;
-    var taskOutputMin;
-    var taskOutputMax;
-    var sourceCode;
-    var sourceCompressed;
 
     this.files.forEach(function(file) {
       srcFiles = grunt.file.expandFiles(file.src);
