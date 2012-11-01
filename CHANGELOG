@@ -1,3 +1,7 @@
+v0.3.2:
+  date: 2012-11-01
+  changes:
+    - Update clean-css dep.
 v0.3.1:
   date: 2012-10-12
   changes:
