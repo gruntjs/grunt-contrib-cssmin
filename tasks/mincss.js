@@ -11,35 +11,31 @@
 module.exports = function(grunt) {
 
   grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
-    var srcFiles, taskOutputMin, taskOutputMax, sourceCode, sourceCompressed;
+    var srcFiles, sourceCode, sourceCompressed;
+    var taskOutputMin = [];
+    var taskOutputMax = [];
 
     var options = this.options();
     grunt.verbose.writeflags(options, 'Options');
 
-    this.files.forEach(function(file) {
-      srcFiles = grunt.file.expandFiles(file.src);
+    var files = grunt.file.expandFiles(this.file.src);
+    files.forEach(function(file) {
+      sourceCode = grunt.file.read(file);
+      sourceCompressed = minifyCSS(sourceCode);
 
-      taskOutputMin = [];
-      taskOutputMax = [];
-
-      srcFiles.forEach(function(srcFile) {
-        sourceCode = grunt.file.read(srcFile);
-        sourceCompressed = minifyCSS(sourceCode);
-
-        taskOutputMin.push(sourceCompressed);
-        taskOutputMax.push(sourceCode);
-      });
-
-      if (taskOutputMin.length > 0) {
-        taskOutputMin = taskOutputMin.join('');
-        taskOutputMax = taskOutputMax.join('\n');
-
-        grunt.file.write(file.dest, taskOutputMin);
-        grunt.log.writeln('File ' + file.dest + ' created.');
-
-        minMaxInfo(taskOutputMin, taskOutputMax);
-      }
+      taskOutputMin.push(sourceCompressed);
+      taskOutputMax.push(sourceCode);
     });
+
+    if (taskOutputMin.length > 0) {
+      taskOutputMin = taskOutputMin.join('');
+      taskOutputMax = taskOutputMax.join('\n');
+
+      grunt.file.write(this.file.dest, taskOutputMin);
+      grunt.log.writeln('File ' + this.file.dest + ' created.');
+
+      minMaxInfo(taskOutputMin, taskOutputMax);
+    }
   });
 
   var minifyCSS = function(source) {
