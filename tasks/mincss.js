@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     var options = this.options();
     grunt.verbose.writeflags(options, 'Options');
 
-    var files = grunt.file.expandFiles(this.file.src);
+    var files = this.file.src;
     files.forEach(function(file) {
       sourceCode = grunt.file.read(file);
       sourceCompressed = minifyCSS(sourceCode);
