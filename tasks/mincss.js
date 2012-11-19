@@ -11,7 +11,7 @@
 module.exports = function(grunt) {
 
   grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
-    var srcFiles, sourceCode, sourceCompressed;
+    var sourceCode, sourceCompressed;
     var taskOutputMin = [];
     var taskOutputMax = [];
 
