@@ -46,15 +46,16 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-internal');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['nodeunit']);
+  grunt.registerTask('test', ['clean', 'mincss', 'nodeunit']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['mincss', 'test', 'build-contrib']);
+  grunt.registerTask('default', ['jshint', 'test', 'build-contrib']);
 
 };
