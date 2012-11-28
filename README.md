@@ -17,26 +17,14 @@ npm install grunt-contrib-mincss --save-dev
 ## Mincss task
 _Run this task with the `grunt mincss` command._
 
-### Overview
+_This task is a [multi task][] so any targets, files and options should be specified according to the [multi task][] documentation._
+[multi task]: https://github.com/gruntjs/grunt/wiki/Configuring-tasks
 
-In your project's Gruntfile, add a section named `mincss` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  mincss: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-})
-```
 
 Files are compressed with [clean-css](https://github.com/GoalSmashers/clean-css).
 
-### Examples
+
+### Usage Examples
 
 ```js
 mincss: {
@@ -47,6 +35,7 @@ mincss: {
   }
 }
 ```
+
 
 ## Release History
 
@@ -59,4 +48,4 @@ mincss: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Tue Nov 13 2012 16:29:34.*
+*This file was generated on Wed Nov 28 2012 08:42:41.*

@@ -1,4 +1,4 @@
-# Examples
+# Usage Examples
 
 ```js
 mincss: {
