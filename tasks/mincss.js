@@ -20,8 +20,10 @@ module.exports = function(grunt) {
 
     var files = this.file.src;
     files.forEach(function(file) {
-      sourceCode = grunt.file.read(file);
-      sourceCompressed = minifyCSS(sourceCode);
+      var dir = grunt.task.directive(srcFile, function() { return null; });
+      
+      sourceCode = dir || grunt.file.read(file);
+      sourceCompressed = dir || minifyCSS(sourceCode);
 
       taskOutputMin.push(sourceCompressed);
       taskOutputMax.push(sourceCode);
