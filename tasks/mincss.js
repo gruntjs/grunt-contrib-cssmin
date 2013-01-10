@@ -9,32 +9,34 @@
 'use strict';
 
 module.exports = function(grunt) {
+  var helper = require('grunt-lib-contrib').init(grunt);
 
   grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
-    var sourceCode, sourceCompressed;
-    var taskOutputMin = [];
-    var taskOutputMax = [];
-
-    var options = this.options();
+    var options = this.options({
+      separator: grunt.util.linefeed
+    });
     grunt.verbose.writeflags(options, 'Options');
 
     this.files.forEach(function(f) {
-      f.src.forEach(function(file) {
-        sourceCode = grunt.file.read(file);
-        sourceCompressed = minifyCSS(sourceCode);
+      var max = f.src.filter(function(filepath) {
+        // Warn on and remove invalid source files (if nonull was set).
+        if (!grunt.file.exists(filepath)) {
+          grunt.log.warn('Source file "' + filepath + '" not found.');
+          return false;
+        } else {
+          return true;
+        }
+      })
+      .map(grunt.file.read)
+      .join(grunt.util.normalizelf(options.separator));
 
-        taskOutputMin.push(sourceCompressed);
-        taskOutputMax.push(sourceCode);
-      });
-
-      if (taskOutputMin.length > 0) {
-        taskOutputMin = taskOutputMin.join('');
-        taskOutputMax = taskOutputMax.join('\n');
-
-        grunt.file.write(f.dest, taskOutputMin);
+      var min = minifyCSS(max);
+      if (min.length < 1) {
+        grunt.log.warn('Destination not written because minified CSS was empty.');
+      } else {
+        grunt.file.write(f.dest, min);
         grunt.log.writeln('File ' + f.dest + ' created.');
-
-        minMaxInfo(taskOutputMin, taskOutputMax);
+        helper.minMaxInfo(min, max);
       }
     });
   });
@@ -46,15 +48,5 @@ module.exports = function(grunt) {
       grunt.log.error(e);
       grunt.fail.warn('css minification failed.');
     }
-  };
-
-  var minMaxGzip = function(src) {
-    return src ? require('gzip-js').zip(src, {}) : '';
-  };
-
-  var minMaxInfo = function(min, max) {
-    var gzipSize = String(minMaxGzip(min).length);
-    grunt.log.writeln('Uncompressed size: ' + String(max.length).green + ' bytes.');
-    grunt.log.writeln('Compressed size: ' + gzipSize.green + ' bytes gzipped (' + String(min.length).green + ' bytes minified).');
   };
 };

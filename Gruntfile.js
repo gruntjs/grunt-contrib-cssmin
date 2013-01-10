@@ -33,6 +33,11 @@ module.exports = function(grunt) {
         files: {
           'tmp/style.css': ['test/fixtures/input_one.css', 'test/fixtures/input_two.css']
         }
+      },
+      empty: {
+        files: {
+          'tmp/idontexist.css': ['test/fixtures/idontexist.css']
+        }
       }
     },
 
