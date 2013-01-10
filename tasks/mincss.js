@@ -18,24 +18,25 @@ module.exports = function(grunt) {
     var options = this.options();
     grunt.verbose.writeflags(options, 'Options');
 
-    var files = this.file.src;
-    files.forEach(function(file) {
-      sourceCode = grunt.file.read(file);
-      sourceCompressed = minifyCSS(sourceCode);
+    this.files.forEach(function(f) {
+      f.src.forEach(function(file) {
+        sourceCode = grunt.file.read(file);
+        sourceCompressed = minifyCSS(sourceCode);
 
-      taskOutputMin.push(sourceCompressed);
-      taskOutputMax.push(sourceCode);
+        taskOutputMin.push(sourceCompressed);
+        taskOutputMax.push(sourceCode);
+      });
+
+      if (taskOutputMin.length > 0) {
+        taskOutputMin = taskOutputMin.join('');
+        taskOutputMax = taskOutputMax.join('\n');
+
+        grunt.file.write(f.dest, taskOutputMin);
+        grunt.log.writeln('File ' + f.dest + ' created.');
+
+        minMaxInfo(taskOutputMin, taskOutputMax);
+      }
     });
-
-    if (taskOutputMin.length > 0) {
-      taskOutputMin = taskOutputMin.join('');
-      taskOutputMax = taskOutputMax.join('\n');
-
-      grunt.file.write(this.file.dest, taskOutputMin);
-      grunt.log.writeln('File ' + this.file.dest + ' created.');
-
-      minMaxInfo(taskOutputMin, taskOutputMax);
-    }
   });
 
   var minifyCSS = function(source) {

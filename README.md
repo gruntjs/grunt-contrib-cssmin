@@ -23,6 +23,8 @@ _This task is a [multi task][] so any targets, files and options should be speci
 
 Files are compressed with [clean-css](https://github.com/GoalSmashers/clean-css).
 
+_Version `0.4.x` of this plugin is compatible with Grunt `0.4.x`. Version `0.3.x` of this plugin is compatible with Grunt `0.3.x`._
+
 
 ### Usage Examples
 
@@ -39,6 +41,7 @@ mincss: {
 
 ## Release History
 
+ * 2013-01-08   v0.4.0rc5   Updating to work with grunt v0.4.0rc5. Switching to this.files api.
  * 2012-10-31   v0.3.2   Update clean-css dep.
  * 2012-10-11   v0.3.1   Rename grunt-contrib-lib dep to grunt-lib-contrib.
  * 2012-09-22   v0.3.0   Options no longer accepted from global config key.
@@ -48,4 +51,4 @@ mincss: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Wed Nov 28 2012 08:42:41.*
+*This file was generated on Wed Jan 09 2013 16:59:18.*
