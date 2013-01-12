@@ -12,11 +12,6 @@ module.exports = function(grunt) {
   var helper = require('grunt-lib-contrib').init(grunt);
 
   grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
-    var options = this.options({
-      separator: grunt.util.linefeed
-    });
-    grunt.verbose.writeflags(options, 'Options');
-
     this.files.forEach(function(f) {
       var max = f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
@@ -28,7 +23,7 @@ module.exports = function(grunt) {
         }
       })
       .map(grunt.file.read)
-      .join(grunt.util.normalizelf(options.separator));
+      .join(grunt.util.normalizelf(grunt.util.linefeed));
 
       var min = minifyCSS(max);
       if (min.length < 1) {

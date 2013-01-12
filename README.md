@@ -25,13 +25,6 @@ Files are compressed with [clean-css](https://github.com/GoalSmashers/clean-css)
 
 _Version `0.4.x` of this plugin is compatible with Grunt `0.4.x`. Version `0.3.x` of this plugin is compatible with Grunt `0.3.x`._
 
-### Options
-
-#### separator
-Type: `String`
-Default: linefeed
-
-Concatenated files will be joined on this string.
 
 ### Usage Examples
 
@@ -58,4 +51,4 @@ mincss: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Thu Jan 10 2013 11:17:25.*
+*This file was generated on Fri Jan 11 2013 17:54:41.*
