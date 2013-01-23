@@ -41,6 +41,7 @@ mincss: {
 
 ## Release History
 
+ * 2013-01-22   v0.4.0rc7   Updating grunt/gruntplugin dependencies to rc7. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
  * 2013-01-08   v0.4.0rc5   Updating to work with grunt v0.4.0rc5. Switching to this.files api.
  * 2012-10-31   v0.3.2   Update clean-css dep.
  * 2012-10-11   v0.3.1   Rename grunt-contrib-lib dep to grunt-lib-contrib.
@@ -51,4 +52,4 @@ mincss: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Fri Jan 11 2013 17:54:41.*
+*This file was generated on Wed Jan 23 2013 11:52:18.*
