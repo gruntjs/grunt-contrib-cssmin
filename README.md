@@ -11,7 +11,7 @@ npm install grunt-contrib-mincss --save-dev
 ```
 
 [grunt]: http://gruntjs.com/
-[Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
+[Getting Started]: http://gruntjs.com/getting-started
 
 
 ## Mincss task
@@ -52,4 +52,4 @@ mincss: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Wed Jan 23 2013 11:52:18.*
+*This file was generated on Tue Feb 05 2013 11:59:53.*
