@@ -1,5 +1,5 @@
 /*
- * grunt-contrib-mincss
+ * grunt-contrib-cssmin
  * http://gruntjs.com/
  *
  * Copyright (c) 2012 Tim Branyen, contributors
@@ -11,7 +11,7 @@
 module.exports = function(grunt) {
   var helper = require('grunt-lib-contrib').init(grunt);
 
-  grunt.registerMultiTask('mincss', 'Minify CSS files', function() {
+  grunt.registerMultiTask('cssmin', 'Minify CSS files', function() {
     this.files.forEach(function(f) {
       var max = f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).

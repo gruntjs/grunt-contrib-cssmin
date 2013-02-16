@@ -1,23 +1,23 @@
 {
-  "name": "grunt-contrib-mincss",
+  "name": "grunt-contrib-cssmin",
   "description": "Compress CSS files.",
-  "version": "0.4.0rc7",
-  "homepage": "https://github.com/gruntjs/grunt-contrib-mincss",
+  "version": "0.4.0",
+  "homepage": "https://github.com/gruntjs/grunt-contrib-cssmin",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gruntjs/grunt-contrib-mincss.git"
+    "url": "git://github.com/gruntjs/grunt-contrib-cssmin.git"
   },
   "bugs": {
-    "url": "https://github.com/gruntjs/grunt-contrib-mincss/issues"
+    "url": "https://github.com/gruntjs/grunt-contrib-cssmin/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/gruntjs/grunt-contrib-mincss/blob/master/LICENSE-MIT"
+      "url": "https://github.com/gruntjs/grunt-contrib-cssmin/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
@@ -32,11 +32,11 @@
     "grunt-lib-contrib": "~0.5.1"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "0.1.1rc6",
-    "grunt-contrib-nodeunit": "0.1.2rc6",
-    "grunt-contrib-clean": "0.4.0rc6",
-    "grunt-contrib-internal": "*",
-    "grunt": "0.4.0rc7"
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-internal": "~0.4.0",
+    "grunt": "~0.4.0"
   },
   "keywords": [
     "gruntplugin"

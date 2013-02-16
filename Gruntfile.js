@@ -1,5 +1,5 @@
 /*
- * grunt-contrib-mincss
+ * grunt-contrib-cssmin
  * http://gruntjs.com/
  *
  * Copyright (c) 2012 Tim Branyen, contributors
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    mincss: {
+    cssmin: {
       compress: {
         files: {
           'tmp/style.css': ['test/fixtures/input_one.css', 'test/fixtures/input_two.css']
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'mincss', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'cssmin', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test', 'build-contrib']);
