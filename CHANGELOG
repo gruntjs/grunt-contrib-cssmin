@@ -1,3 +1,7 @@
+v0.4.1:
+  date: 2013-02-17
+  changes:
+    - Update clean-css dependency to ~0.10.0
 v0.4.0:
   date: 2013-02-15
   changes:

@@ -37,6 +37,7 @@ cssmin: {
 
 ## Release History
 
+ * 2013-02-16   v0.4.1   Update clean-css dependency to ~0.10.0
  * 2013-02-14   v0.4.0   First official release for Grunt 0.4.0.
  * 2013-01-22   v0.4.0rc7   Updating grunt/gruntplugin dependencies to rc7. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
  * 2013-01-08   v0.4.0rc5   Updating to work with grunt v0.4.0rc5. Switching to this.files api.
@@ -49,4 +50,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Fri Feb 15 2013 19:23:29.*
+*This file was generated on Sun Feb 17 2013 16:25:10.*
