@@ -29,8 +29,9 @@ module.exports = function(grunt) {
       if (min.length < 1) {
         grunt.log.warn('Destination not written because minified CSS was empty.');
       } else {
-        grunt.file.write(f.dest, min);
-        grunt.log.writeln('File ' + f.dest + ' created.');
+        var dest = f.dest || f.src[0];
+        grunt.file.write(dest, min);
+        grunt.log.writeln('File ' + dest + ' created.');
         helper.minMaxInfo(min, max);
       }
     });
