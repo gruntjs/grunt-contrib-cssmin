@@ -12,6 +12,15 @@ exports.cssmin = {
 
     test.done();
   },
+  with_banner: function(test) {
+    test.expect(1);
+
+    var expect = grunt.file.read('test/expected/with-banner.css');
+    var result = grunt.file.read('tmp/with-banner.css');
+    test.equal(expect, result, 'should concat, minify and prefix banner');
+
+    test.done();
+  },
   empty: function(test) {
     test.expect(1);
 
