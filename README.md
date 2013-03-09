@@ -37,6 +37,13 @@ Type: `String`
 Default: `null`
 
 Prefix the compressed source with the given banner, with a linebreak inbetween.
+
+#### keepSpecialComments
+
+Type: `String` `Number`
+Default: `'*'`
+
+To keep or remove special comments, exposing the underlying option from [clean-css](https://github.com/GoalSmashers/clean-css).. `'*'` for keeping all (default), `1` for keeping first one, `0` for removing all.
 ### Usage Examples
 
 ```js
@@ -73,4 +80,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Sat Mar 09 2013 11:57:33.*
+*This file was generated on Sat Mar 09 2013 12:03:03.*

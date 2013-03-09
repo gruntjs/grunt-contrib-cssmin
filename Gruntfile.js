@@ -46,6 +46,15 @@ module.exports = function(grunt) {
         files: {
           'tmp/with-banner.css': ['test/fixtures/input_one.css', 'test/fixtures/input_two.css']
         }
+      },
+      remove_first_comment: {
+        options: {
+          banner: '/* custom banner */',
+          keepSpecialComments: 0
+        },
+        files: {
+          'tmp/remove_first_comment.css': ['test/fixtures/input_bannered.css']
+        }
       }
     },
 
