@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       .map(grunt.file.read)
       .join(grunt.util.normalizelf(grunt.util.linefeed));
 
-      var min = minifyCSS(max);
+      var min = minifyCSS(max, options);
       if (min.length < 1) {
         grunt.log.warn('Destination not written because minified CSS was empty.');
       } else {
@@ -40,9 +40,9 @@ module.exports = function(grunt) {
     });
   });
 
-  var minifyCSS = function(source) {
+  var minifyCSS = function(source, options) {
     try {
-      return require('clean-css').process(source);
+      return require('clean-css').process(source, options);
     } catch (e) {
       grunt.log.error(e);
       grunt.fail.warn('css minification failed.');
