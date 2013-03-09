@@ -38,6 +38,14 @@ module.exports = function(grunt) {
         files: {
           'tmp/idontexist.css': ['test/fixtures/idontexist.css']
         }
+      },
+      with_banner: {
+        options: {
+          banner: '/* module name - my awesome css banner */'
+        },
+        files: {
+          'tmp/with-banner.css': ['test/fixtures/input_one.css', 'test/fixtures/input_two.css']
+        }
       }
     },
 
