@@ -27,5 +27,14 @@ exports.cssmin = {
     test.ok(!grunt.file.exists('tmp/idontexist.css'), 'Empty minified file should not exist');
 
     test.done();
+  },
+  remove_first_comment: function(test) {
+    test.expect(1);
+
+    var expect = grunt.file.read('test/expected/input_bannered.css');
+    var result = grunt.file.read('tmp/remove_first_comment.css');
+    test.equal(expect, result, 'should minify and replace banner');
+
+    test.done();
   }
 };
