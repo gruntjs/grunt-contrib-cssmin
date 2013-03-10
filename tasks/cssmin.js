@@ -12,6 +12,7 @@ module.exports = function(grunt) {
   var helper = require('grunt-lib-contrib').init(grunt);
 
   grunt.registerMultiTask('cssmin', 'Minify CSS files', function() {
+    var options = this.options();
     this.files.forEach(function(f) {
       var max = f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
@@ -29,6 +30,9 @@ module.exports = function(grunt) {
       if (min.length < 1) {
         grunt.log.warn('Destination not written because minified CSS was empty.');
       } else {
+        if ( options.banner ) {
+          min = options.banner + grunt.util.linefeed + min;
+        }
         grunt.file.write(f.dest, min);
         grunt.log.writeln('File ' + f.dest + ' created.');
         helper.minMaxInfo(min, max);
