@@ -67,17 +67,18 @@ cssmin: {
 
 ## Release History
 
- * 2013-02-17   v0.4.1   Update clean-css dependency to ~0.10.0
- * 2013-02-15   v0.4.0   First official release for Grunt 0.4.0.
- * 2013-01-23   v0.4.0rc7   Updating grunt/gruntplugin dependencies to rc7. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
- * 2013-01-09   v0.4.0rc5   Updating to work with grunt v0.4.0rc5. Switching to this.files api.
- * 2012-11-01   v0.3.2   Update clean-css dep.
- * 2012-10-12   v0.3.1   Rename grunt-contrib-lib dep to grunt-lib-contrib.
- * 2012-09-23   v0.3.0   Options no longer accepted from global config key.
- * 2012-09-10   v0.2.0   Refactored from grunt-contrib into individual repo.
+ * 2013-03-09   v0.4.2   Add banner option Support clean-css keepSpecialComments
+ * 2013-02-16   v0.4.1   Update clean-css dependency to ~0.10.0
+ * 2013-02-14   v0.4.0   First official release for Grunt 0.4.0.
+ * 2013-01-22   v0.4.0rc7   Updating grunt/gruntplugin dependencies to rc7. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
+ * 2013-01-08   v0.4.0rc5   Updating to work with grunt v0.4.0rc5. Switching to this.files api.
+ * 2012-10-31   v0.3.2   Update clean-css dep.
+ * 2012-10-11   v0.3.1   Rename grunt-contrib-lib dep to grunt-lib-contrib.
+ * 2012-09-22   v0.3.0   Options no longer accepted from global config key.
+ * 2012-09-09   v0.2.0   Refactored from grunt-contrib into individual repo.
 
 ---
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Sat Mar 09 2013 12:03:03.*
+*This file was generated on Sun Mar 10 2013 19:09:35.*
