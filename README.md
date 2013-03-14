@@ -82,6 +82,7 @@ cssmin: {
 
 ## Release History
 
+ * 2013-03-13   v0.5.0   Support for 'report' option (false by default)
  * 2013-03-09   v0.4.2   Add banner option Support clean-css keepSpecialComments
  * 2013-02-16   v0.4.1   Update clean-css dependency to ~0.10.0
  * 2013-02-14   v0.4.0   First official release for Grunt 0.4.0.
@@ -96,4 +97,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Thu Mar 14 2013 18:09:22.*
+*This file was generated on Thu Mar 14 2013 17:50:54.*

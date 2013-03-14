@@ -1,3 +1,7 @@
+v0.5.0:
+  date: 2013-03-14
+  changes:
+   - Support for 'report' option (false by default) 
 v0.4.2:
   date: 2013-03-10
   changes:
