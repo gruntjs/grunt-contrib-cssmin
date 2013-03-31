@@ -61,7 +61,7 @@ Gzipped:  20084 bytes.
 ```
 ### Usage Examples
 
-#### Combine two files into one output file
+###### Combine two files into one output file
 
 ```js
 cssmin: {
@@ -72,7 +72,7 @@ cssmin: {
   }
 }
 ```
-#### Add a banner
+###### Add a banner
 
 ```js
 cssmin: {
@@ -86,7 +86,7 @@ cssmin: {
   }
 }
 ```
-#### Minify all contents of a release directory and add a `.min.css` extension
+###### Minify all contents of a release directory and add a `.min.css` extension
 
 ```js
 cssmin: {
@@ -99,6 +99,7 @@ cssmin: {
   }
 }
 ```
+
 
 ## Release History
 
@@ -117,4 +118,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Thu Mar 14 2013 17:50:54.*
+*This file was generated on Sun Mar 31 2013 09:27:16.*
