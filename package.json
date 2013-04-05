@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-cssmin",
   "description": "Compress CSS files.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "homepage": "https://github.com/gruntjs/grunt-contrib-cssmin",
   "author": {
     "name": "Grunt Team",

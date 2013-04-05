@@ -1,7 +1,11 @@
+v0.6.0:
+  date: 2013-04-05
+  changes:
+    - Update clean-css dependency to ~1.0.0
 v0.5.0:
   date: 2013-03-14
   changes:
-   - Support for 'report' option (false by default) 
+   - Support for 'report' option (false by default)
 v0.4.2:
   date: 2013-03-10
   changes:
