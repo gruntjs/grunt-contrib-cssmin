@@ -31,12 +31,19 @@ Task targets, files and options may be specified according to the grunt [Configu
 Files are compressed with [clean-css](https://github.com/GoalSmashers/clean-css).
 ### Options
 
+#### skipMinify
+
+Type: `Boolean`
+Default: `false`
+
+If set to true, minification is skipped. This is useful if you'd like a concat file in your dev environment but don't want to slow the build with minification.
+
 #### banner
 
 Type: `String`
 Default: `null`
 
-Prefix the compressed source with the given banner, with a linebreak inbetween.
+Prefix the compressed source with the given banner, with a linebreak in between.
 
 #### keepSpecialComments
 
