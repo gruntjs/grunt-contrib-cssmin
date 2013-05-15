@@ -28,7 +28,15 @@ module.exports = function(grunt) {
       .map(grunt.file.read)
       .join(grunt.util.normalizelf(grunt.util.linefeed));
 
-      var min = minifyCSS(max, options);
+			// Option to skip minification.
+			// Allows for option of faster builds in development while still using a concat file
+      var min
+			if (options.skipMinify) {
+				min = max
+			} else {
+				min = minifyCSS(max, options);
+			}
+
       if (min.length < 1) {
         grunt.log.warn('Destination not written because minified CSS was empty.');
       } else {
