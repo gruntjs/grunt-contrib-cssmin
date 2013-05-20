@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       report: false
     });
     this.files.forEach(function(f) {
-      var min = f.src.filter(function(filepath) {
+      var valid = f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
@@ -25,8 +25,11 @@ module.exports = function(grunt) {
         } else {
           return true;
         }
-      })
-      .map(function(f) {
+      });
+      var max = valid
+        .map(grunt.file.read)
+        .join(grunt.util.normalizelf(grunt.util.linefeed));
+      var min = valid.map(function(f) {
         options.relativeTo = path.dirname(f);
         return minifyCSS(grunt.file.read(f), options);
       })
