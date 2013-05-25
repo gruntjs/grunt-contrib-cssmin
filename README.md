@@ -103,6 +103,7 @@ cssmin: {
 
 ## Release History
 
+ * 2013-05-25   v0.6.1   Support import in-lining vis clean-css ~1.0.4.
  * 2013-04-05   v0.6.0   Update clean-css dependency to ~1.0.0
  * 2013-03-14   v0.5.0   Support for 'report' option (false by default)
  * 2013-03-10   v0.4.2   Add banner option Support clean-css keepSpecialComments
@@ -119,4 +120,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://goingslowly.com/)
 
-*This file was generated on Fri Apr 05 2013 09:07:25.*
+*This file was generated on Sat May 25 2013 18:52:13.*
