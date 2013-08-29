@@ -42,7 +42,7 @@ module.exports = function(grunt) {
           min = options.banner + grunt.util.linefeed + min;
         }
         grunt.file.write(f.dest, min);
-        grunt.log.writeln('File ' + f.dest + ' created.');
+        grunt.log.writeln('File ' + f.dest.cyan + ' created.');
         if(options.report) {
           helper.minMaxInfo(min, max, options.report);
         }
