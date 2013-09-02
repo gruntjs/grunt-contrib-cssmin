@@ -41,6 +41,9 @@ module.exports = function(grunt) {
         if (options.banner) {
           min = options.banner + grunt.util.linefeed + min;
         }
+        if (options.postProcessor) {
+          min = options.postProcessor(min);
+        }
         grunt.file.write(f.dest, min);
         grunt.log.writeln('File ' + f.dest + ' created.');
         if (options.report) {
