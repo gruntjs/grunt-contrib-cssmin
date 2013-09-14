@@ -1,3 +1,7 @@
+v0.6.2:
+  date: 2013-09-14
+  changes:
+    - Support relative URLs via clean-css ~1.1.1.
 v0.6.1:
   date: 2013-05-25
   changes:
