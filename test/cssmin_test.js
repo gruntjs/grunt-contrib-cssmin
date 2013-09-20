@@ -45,5 +45,14 @@ exports.cssmin = {
     test.equal(expect, result, 'should inline @import');
 
     test.done();
+  },
+  post_process: function(test) {
+    test.expect(1);
+
+    var expect = grunt.file.read('test/expected/post_process.css');
+    var result = grunt.file.read('tmp/post_process.css');
+    test.equal(expect, result, 'should envoke post processing function');
+
+    test.done();
   }
 };

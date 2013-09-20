@@ -60,6 +60,14 @@ module.exports = function(grunt) {
         files: {
           'tmp/inline_import.css': ['test/fixtures/input_inline_import.css', 'test/fixtures/inner/input_inline_import.css']
         }
+      },
+      post_process: {
+        options: {
+          postProcessor: function(min) { return min + '\n/* I\'m in your base killing your d00ds. */\n'; }
+        },
+        files: {
+          'tmp/post_process.css': ['test/fixtures/input_one.css', 'test/fixtures/input_two.css']
+        }
       }
     },
 
