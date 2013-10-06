@@ -2,20 +2,20 @@
 
 ## banner
 
-Type: `String`
+Type: `String`  
 Default: `null`
 
 Prefix the compressed source with the given banner, with a linebreak inbetween.
 
 ## keepSpecialComments
 
-Type: `String` `Number`
+Type: `String` `Number`  
 Default: `'*'`
 
 To keep or remove special comments, exposing the underlying option from [clean-css](https://github.com/GoalSmashers/clean-css).. `'*'` for keeping all (default), `1` for keeping first one, `0` for removing all.
 
 ## report
-Choices: `false`, `'min'`, `'gzip'`
+Choices: `false`, `'min'`, `'gzip'`  
 Default: `false`
 
 Either do not report anything, report only minification result, or report minification and gzip results.
