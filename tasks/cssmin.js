@@ -11,6 +11,7 @@
 module.exports = function(grunt) {
   var helper = require('grunt-lib-contrib').init(grunt);
   var path = require('path');
+  var CleanCSS = require('clean-css');
 
   grunt.registerMultiTask('cssmin', 'Minify CSS files', function() {
     var options = this.options({
@@ -52,7 +53,7 @@ module.exports = function(grunt) {
 
   var minifyCSS = function(source, options) {
     try {
-      return require('clean-css').process(source, options);
+      return new CleanCSS(options).minify(source)
     } catch (e) {
       grunt.log.error(e);
       grunt.fail.warn('css minification failed.');

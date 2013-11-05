@@ -27,7 +27,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "clean-css": "~1.1.1",
+    "clean-css": "~2.0.0",
     "grunt-lib-contrib": "~0.6.0"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "grunt": "~0.4.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.1"
   },
   "keywords": [
     "gruntplugin"
