@@ -18,6 +18,7 @@ module.exports = function(grunt) {
       report: false
     });
     this.files.forEach(function(f) {
+      var destination = f.dest;
       var valid = f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
@@ -32,6 +33,7 @@ module.exports = function(grunt) {
       .join(grunt.util.normalizelf(grunt.util.linefeed));
       var min = valid.map(function(f) {
         options.relativeTo = path.dirname(f);
+        options.target = destination;
         return minifyCSS(grunt.file.read(f), options);
       })
       .join('');
