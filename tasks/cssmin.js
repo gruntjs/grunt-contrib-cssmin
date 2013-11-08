@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 
   var minifyCSS = function(source, options) {
     try {
-      return new CleanCSS(options).minify(source)
+      return new CleanCSS(options).minify(source);
     } catch (e) {
       grunt.log.error(e);
       grunt.fail.warn('css minification failed.');
