@@ -104,6 +104,7 @@ cssmin: {
 
 ## Release History
 
+ * 2013-11-23   v0.7.0   update clean-css to v2.0.0
  * 2013-09-14   v0.6.2   Support relative URLs via clean-css ~1.1.1.
  * 2013-05-25   v0.6.1   Support import in-lining vis clean-css ~1.0.4.
  * 2013-04-05   v0.6.0   Update clean-css dependency to ~1.0.0
