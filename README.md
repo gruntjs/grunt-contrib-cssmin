@@ -60,7 +60,7 @@ Minified: 101615 bytes.
 Gzipped:  20084 bytes.
 ```
 
-#### staleOnly
+#### onlyStale
 Choices: `true`, `false`
 Default: `true`
 
