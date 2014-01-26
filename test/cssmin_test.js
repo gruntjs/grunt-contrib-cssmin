@@ -51,10 +51,10 @@ exports.cssmin = {
     test.expect(2);
     
     var staleMtime = statSync('tmp/stale_dest.css').mtime.getTime() / 1000;
-    test.notEqual(staleMtime, 0);
+    test.notEqual(staleMtime, 0, 'stale file should be minified');
     
     var freshMtime = statSync('tmp/fresh_dest.css').mtime.getTime() / 1000;
-    test.equal(freshMtime, 30);
+    test.equal(freshMtime, 30, 'fresh file should not be minified');
     
     test.done();
   }
