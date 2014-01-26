@@ -61,7 +61,7 @@ module.exports = function(grunt) {
           'tmp/inline_import.css': ['test/fixtures/input_inline_import.css', 'test/fixtures/inner/input_inline_import.css']
         }
       },
-      stale_only: {
+      only_stale: {
         options: {
           'onlyStale': true
         },
@@ -87,8 +87,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-internal');
   
-  // File mtime modification task to unit test staleOnly
-  grunt.registerTask('staleonlysetup', function() {
+  // File mtime modification task to unit test onlyStale
+  grunt.registerTask('onlystalesetup', function() {
     var fs = require('fs');
     
     // Make
@@ -109,7 +109,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'staleonlysetup', 'cssmin', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'onlystalesetup', 'cssmin', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test', 'build-contrib']);

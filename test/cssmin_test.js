@@ -47,7 +47,7 @@ exports.cssmin = {
 
     test.done();
   },
-  stale_only: function(test) {
+  only_stale: function(test) {
     test.expect(2);
     
     var staleMtime = statSync('tmp/stale_dest.css').mtime.getTime() / 1000;
