@@ -1,6 +1,7 @@
 'use strict';
 
 var grunt = require('grunt');
+var statSync = require('fs').statSync;
 
 exports.cssmin = {
   main: function(test) {
@@ -44,6 +45,17 @@ exports.cssmin = {
     var result = grunt.file.read('tmp/inline_import.css');
     test.equal(expect, result, 'should inline @import');
 
+    test.done();
+  },
+  stale_only: function(test) {
+    test.expect(2);
+    
+    var staleMtime = statSync('tmp/stale_dest.css').mtime.getTime() / 1000;
+    test.notEqual(staleMtime, 0);
+    
+    var freshMtime = statSync('tmp/fresh_dest.css').mtime.getTime() / 1000;
+    test.equal(freshMtime, 30);
+    
     test.done();
   }
 };
