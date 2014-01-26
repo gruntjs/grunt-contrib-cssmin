@@ -60,6 +60,18 @@ Minified: 101615 bytes.
 Gzipped:  20084 bytes.
 ```
 
+#### onlyStale
+Choices: `true`, `false`
+Default: `true`
+
+If the destination file is up to date (none of its sources have been updated since the last minification), it it skipped. If the source and destination file are the same, this option has no effect.
+
+Example output using `true` with a destination `main.min.js` that is up to date:
+
+```
+File main.min.js is already up to date.
+```
+
 ### Usage Examples
 
 #### Combine two files into one output file
