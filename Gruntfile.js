@@ -62,6 +62,9 @@ module.exports = function(grunt) {
         }
       },
       stale_only: {
+        options: {
+          'onlyStale': true
+        },
         files: {
           'tmp/stale_dest.css': ['test/fixtures/input_stale_dest_one.css', 'test/fixtures/input_stale_dest_two.css'],
           'tmp/fresh_dest.css': ['test/fixtures/input_fresh_dest_one.css', 'test/fixtures/input_fresh_dest_two.css']
