@@ -27,9 +27,12 @@ module.exports = function(grunt) {
           return true;
         }
       });
-      var max = valid
-      .map(grunt.file.read)
-      .join(grunt.util.normalizelf(grunt.util.linefeed));
+      var max;
+      if(options.report) {
+        max = valid
+        .map(grunt.file.read)
+        .join(grunt.util.normalizelf(grunt.util.linefeed));
+      }
       var min = valid.map(function(f) {
         options.relativeTo = path.dirname(f);
         return minifyCSS(grunt.file.read(f), options);
