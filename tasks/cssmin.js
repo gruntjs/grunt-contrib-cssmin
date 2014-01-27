@@ -12,6 +12,7 @@ module.exports = function(grunt) {
   var helper = require('grunt-lib-contrib').init(grunt);
   var path = require('path');
   var CleanCSS = require('clean-css');
+  var chalk = require('chalk');
 
   grunt.registerMultiTask('cssmin', 'Minify CSS files', function() {
     var options = this.options({
@@ -46,7 +47,7 @@ module.exports = function(grunt) {
           min = options.banner + grunt.util.linefeed + min;
         }
         grunt.file.write(f.dest, min);
-        grunt.log.writeln('File ' + f.dest + ' created.');
+        grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created.');
         if(options.report) {
           helper.minMaxInfo(min, max, options.report);
         }
