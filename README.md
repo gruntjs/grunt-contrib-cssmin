@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v0.7.0 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin)
+# grunt-contrib-cssmin v0.8.0 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin)
 
 > Compress CSS files.
 
@@ -104,6 +104,7 @@ cssmin: {
 
 ## Release History
 
+ * 2013-02-14   v0.8.0   update clean-css v2.1.0
  * 2013-11-23   v0.7.0   update clean-css v2.0.0
  * 2013-09-14   v0.6.2   Support relative URLs via clean-css ~1.1.1.
  * 2013-05-25   v0.6.1   Support import in-lining vis clean-css ~1.0.4.
@@ -123,4 +124,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Sat Feb 15 2014 10:37:17.*
+*This file was generated on Mon Feb 17 2014 14:49:35.*
