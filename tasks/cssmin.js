@@ -7,22 +7,31 @@
  */
 
 'use strict';
+var path = require('path');
+var CleanCSS = require('clean-css');
+var chalk = require('chalk');
+var maxmin = require('maxmin');
 
 module.exports = function(grunt) {
-  var path = require('path');
-  var CleanCSS = require('clean-css');
-  var chalk = require('chalk');
-  var maxmin = require('maxmin');
+  var minify = function(source, options) {
+    try {
+      return new CleanCSS(options).minify(source);
+    } catch (err) {
+      grunt.log.error(err);
+      grunt.fail.warn('CSS minification failed.');
+    }
+  };
 
-  grunt.registerMultiTask('cssmin', 'Minify CSS files', function() {
+  grunt.registerMultiTask('cssmin', 'Minify CSS', function() {
     var options = this.options({
       report: 'min'
     });
-    this.files.forEach(function(f) {
-      var valid = f.src.filter(function(filepath) {
+
+    this.files.forEach(function(file) {
+      var valid = file.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
+          grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found.');
           return false;
         } else {
           return true;
@@ -30,32 +39,24 @@ module.exports = function(grunt) {
       });
 
       var max = '';
-      var min = valid.map(function(f) {
-        var src = grunt.file.read(f);
+      var min = valid.map(function(file) {
+        var src = grunt.file.read(file);
         max += src;
-        options.relativeTo = path.dirname(f);
-        return minifyCSS(src, options);
+        options.relativeTo = path.dirname(file);
+        return minify(src, options);
       }).join('');
 
-      if (min.length < 1) {
-        grunt.log.warn('Destination not written because minified CSS was empty.');
-      } else {
-        if (options.banner) {
-          min = options.banner + grunt.util.linefeed + min;
-        }
-
-        grunt.file.write(f.dest, min);
-        grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created: ' + maxmin(max, min, options.report === 'gzip'));
+      if (min.length === 0) {
+        return grunt.log.warn('Destination not written because minified CSS was empty.');
       }
+
+      if (options.banner) {
+        min = options.banner + grunt.util.linefeed + min;
+      }
+
+      grunt.file.write(file.dest, min);
+
+      grunt.log.writeln('File ' + chalk.cyan(file.dest) + ' created: ' + maxmin(max, min, options.report === 'gzip'));
     });
   });
-
-  var minifyCSS = function(source, options) {
-    try {
-      return new CleanCSS(options).minify(source);
-    } catch (e) {
-      grunt.log.error(e);
-      grunt.fail.warn('CSS minification failed.');
-    }
-  };
 };
