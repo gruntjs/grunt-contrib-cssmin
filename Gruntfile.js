@@ -41,7 +41,8 @@ module.exports = function(grunt) {
       },
       with_banner: {
         options: {
-          banner: '/* module name - my awesome css banner */'
+          banner: '/* module name - my awesome css banner */',
+          report: 'gzip'
         },
         files: {
           'tmp/with-banner.css': ['test/fixtures/input_one.css', 'test/fixtures/input_two.css']

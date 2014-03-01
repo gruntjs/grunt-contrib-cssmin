@@ -9,10 +9,10 @@
 'use strict';
 
 module.exports = function(grunt) {
-  var helper = require('grunt-lib-contrib').init(grunt);
   var path = require('path');
   var CleanCSS = require('clean-css');
   var chalk = require('chalk');
+  var maxmin = require('maxmin');
 
   grunt.registerMultiTask('cssmin', 'Minify CSS files', function() {
     var options = this.options({
@@ -43,13 +43,15 @@ module.exports = function(grunt) {
       if (min.length < 1) {
         grunt.log.warn('Destination not written because minified CSS was empty.');
       } else {
-        if ( options.banner ) {
+        if (options.banner) {
           min = options.banner + grunt.util.linefeed + min;
         }
         grunt.file.write(f.dest, min);
-        grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created.');
-        if(options.report) {
-          helper.minMaxInfo(min, max, options.report);
+        grunt.log.write('File ' + chalk.cyan(f.dest) + ' created');
+        if(options.report !== false) {
+          grunt.log.writeln(': ' + maxmin(max, min, options.report === 'gzip'));
+        } else {
+          grunt.log.writeln('.');
         }
       }
     });
@@ -60,7 +62,7 @@ module.exports = function(grunt) {
       return new CleanCSS(options).minify(source);
     } catch (e) {
       grunt.log.error(e);
-      grunt.fail.warn('css minification failed.');
+      grunt.fail.warn('CSS minification failed.');
     }
   };
 };
