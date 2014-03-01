@@ -19,6 +19,11 @@ module.exports = function(grunt) {
       report: false
     });
     this.files.forEach(function(f) {
+      if(!!f.baseDir){
+          // clean-css runs path.dirname() on options.target, so
+          // we need to append some filename to make it resolve to f.baseDir
+          options.target = f.baseDir + '/irrelevant';
+      }
       var valid = f.src.filter(function(filepath) {
         // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
