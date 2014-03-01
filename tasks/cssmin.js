@@ -2,7 +2,7 @@
  * grunt-contrib-cssmin
  * http://gruntjs.com/
  *
- * Copyright (c) 2013 Tim Branyen, contributors
+ * Copyright (c) 2014 Tim Branyen, contributors
  * Licensed under the MIT license.
  */
 
