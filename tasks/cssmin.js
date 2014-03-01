@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('cssmin', 'Minify CSS files', function() {
     var options = this.options({
-      report: false
+      report: 'min'
     });
     this.files.forEach(function(f) {
       var valid = f.src.filter(function(filepath) {
@@ -28,17 +28,14 @@ module.exports = function(grunt) {
           return true;
         }
       });
-      var max;
-      if(options.report) {
-        max = valid
-        .map(grunt.file.read)
-        .join(grunt.util.normalizelf(grunt.util.linefeed));
-      }
+
+      var max = '';
       var min = valid.map(function(f) {
+        var src = grunt.file.read(f);
+        max += src;
         options.relativeTo = path.dirname(f);
-        return minifyCSS(grunt.file.read(f), options);
-      })
-      .join('');
+        return minifyCSS(src, options);
+      }).join('');
 
       if (min.length < 1) {
         grunt.log.warn('Destination not written because minified CSS was empty.');
@@ -46,13 +43,9 @@ module.exports = function(grunt) {
         if (options.banner) {
           min = options.banner + grunt.util.linefeed + min;
         }
+
         grunt.file.write(f.dest, min);
-        grunt.log.write('File ' + chalk.cyan(f.dest) + ' created');
-        if(options.report !== false) {
-          grunt.log.writeln(': ' + maxmin(max, min, options.report === 'gzip'));
-        } else {
-          grunt.log.writeln('.');
-        }
+        grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created: ' + maxmin(max, min, options.report === 'gzip'));
       }
     });
   });
