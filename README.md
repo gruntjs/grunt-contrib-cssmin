@@ -96,6 +96,7 @@ cssmin: {
 
 ## Release History
 
+ * 2014-02-01   v0.9.0   refactor. remove grunt-lib-contrib dependency. backwards-compatibly remove `false` choice from `report`.
  * 2014-02-14   v0.8.0   update clean-css v2.1.0
  * 2013-11-23   v0.7.0   update clean-css v2.0.0
  * 2013-09-14   v0.6.2   Support relative URLs via clean-css ~1.1.1.
@@ -116,4 +117,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Sat Mar 01 2014 20:06:30.*
+*This file was generated on Sun Mar 02 2014 16:23:48.*
