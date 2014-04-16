@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v0.9.0 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin)
+# grunt-contrib-cssmin v0.9.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin"><img src="https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master" alt="Build Status: Windows" height="18" /></a>
 
 > Compress CSS files.
 
@@ -117,4 +117,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Sun Mar 02 2014 16:23:48.*
+*This file was generated on Wed Apr 16 2014 10:53:14.*
