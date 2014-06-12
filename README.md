@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v0.9.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin"><img src="https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master" alt="Build Status: Windows" height="18" /></a>
+# grunt-contrib-cssmin v0.10.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin"><img src="https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master" alt="Build Status: Windows" height="18" /></a>
 
 > Compress CSS files.
 
@@ -96,6 +96,7 @@ cssmin: {
 
 ## Release History
 
+ * 2014-06-11   v0.10.0   update clean-css v2.2.0
  * 2014-02-01   v0.9.0   refactor. remove grunt-lib-contrib dependency. backwards-compatibly remove `false` choice from `report`.
  * 2014-02-14   v0.8.0   update clean-css v2.1.0
  * 2013-11-23   v0.7.0   update clean-css v2.0.0
@@ -117,4 +118,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Wed Apr 16 2014 10:53:14.*
+*This file was generated on Wed Jun 11 2014 23:05:14.*
