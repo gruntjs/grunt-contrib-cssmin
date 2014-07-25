@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 
       grunt.file.write(file.dest, min);
 
-      grunt.log.writeln('File ' + chalk.cyan(file.dest) + ' created: ' + maxmin(max, min, options.report === 'gzip'));
+      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created: ' + maxmin(max, min, options.report === 'gzip'));
     });
   });
 };
