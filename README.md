@@ -85,13 +85,13 @@ cssmin: {
 #### Minify all contents of a release directory and add a `.min.css` extension
 ```js
 cssmin: {
-  minify: {
+  files: [{
     expand: true,
     cwd: 'release/css/',
     src: ['*.css', '!*.min.css'],
     dest: 'release/css/',
     ext: '.min.css'
-  }
+  }]
 }
 ```
 
@@ -120,4 +120,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Sun Jul 20 2014 11:39:28.*
+*This file was generated on Tuedsay Aug 26 2014 13:17:00.*
