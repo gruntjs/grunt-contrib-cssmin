@@ -85,13 +85,15 @@ cssmin: {
 #### Minify all contents of a release directory and add a `.min.css` extension
 ```js
 cssmin: {
-  files: [{
-    expand: true,
-    cwd: 'release/css/',
-    src: ['*.css', '!*.min.css'],
-    dest: 'release/css/',
-    ext: '.min.css'
-  }]
+  my_target: {
+    files: [{
+      expand: true,
+      cwd: 'release/css/',
+      src: ['*.css', '!*.min.css'],
+      dest: 'release/css/',
+      ext: '.min.css'
+    }]
+  }
 }
 ```
 
