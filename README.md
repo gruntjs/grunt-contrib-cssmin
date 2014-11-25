@@ -47,6 +47,13 @@ Default: `'*'`
 
 To keep or remove special comments, exposing the underlying option from [clean-css](https://github.com/GoalSmashers/clean-css). `'*'` for keeping all (default), `1` for keeping first one, `0` for removing all.
 
+#### noAdvanced
+
+Type: `Boolean`  
+Default: false
+
+Use to disable advanced compression, exposing the underlying `--skip-advanced` option from [clean-css](https://github.com/GoalSmashers/clean-css). `false` for enabling compression (default), `true` for disabling advanced compression.
+
 #### report
 Choices: `'min'`, `'gzip'`  
 Default: `'min'`
