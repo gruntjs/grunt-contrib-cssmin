@@ -32,22 +32,15 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 Files are compressed with [clean-css](https://github.com/GoalSmashers/clean-css).
 ### Options
+All options provided for your target are passed directly to [clean-css](https://github.com/jakubpawlowicz/clean-css).  Thus, see [their option docs](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically).  This plugin defines **additional** options on the same object.
 
 Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines some extra options:
 
 #### banner
-
 Type: `String`  
 Default: `null`
 
 Prefix the compressed source with the given banner, with a linebreak inbetween.
-
-#### keepSpecialComments
-
-Type: `String` `Number`  
-Default: `'*'`
-
-To keep or remove special comments, exposing the underlying option from [clean-css](https://github.com/GoalSmashers/clean-css). `'*'` for keeping all (default), `1` for keeping first one, `0` for removing all.
 
 #### report
 
@@ -81,6 +74,22 @@ cssmin: {
     },
     files: {
       'path/to/output.css': ['path/to/**/*.css']
+    }
+  }
+}
+```
+
+#### Use underlying clean-css options
+```js
+cssmin: {
+  your_target: {
+    options: {
+      banner: 'your_target\'s fancy banner'
+      keepBreaks: true, // clean-css option
+      relativeTo: 'some/file/path' // clean-css option
+    },
+    files: {
+      'path/to/output.css': ['path/to/input_one.css', 'path/to/input_two.css']
     }
   }
 }
