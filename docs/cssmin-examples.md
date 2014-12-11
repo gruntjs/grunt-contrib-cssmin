@@ -13,6 +13,7 @@ cssmin: {
 ```
 
 ## Add a banner
+
 ```js
 cssmin: {
   add_banner: {
@@ -27,14 +28,17 @@ cssmin: {
 ```
 
 ## Minify all contents of a release directory and add a `.min.css` extension
+
 ```js
 cssmin: {
-  minify: {
-    expand: true,
-    cwd: 'release/css/',
-    src: ['*.css', '!*.min.css'],
-    dest: 'release/css/',
-    ext: '.min.css'
+  my_target: {
+    files: [{
+      expand: true,
+      cwd: 'release/css/',
+      src: ['*.css', '!*.min.css'],
+      dest: 'release/css/',
+      ext: '.min.css'
+    }]
   }
 }
 ```

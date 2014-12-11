@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v0.11.0-pre [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin"><img src="https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master" alt="Build Status: Windows" height="18" /></a>
+# grunt-contrib-cssmin v0.11.0-pre [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
 > Compress CSS files.
 
@@ -33,6 +33,8 @@ Task targets, files and options may be specified according to the grunt [Configu
 Files are compressed with [clean-css](https://github.com/GoalSmashers/clean-css).
 ### Options
 
+Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines some extra options:
+
 #### banner
 
 Type: `String`  
@@ -40,14 +42,8 @@ Default: `null`
 
 Prefix the compressed source with the given banner, with a linebreak inbetween.
 
-#### keepSpecialComments
-
-Type: `String` `Number`  
-Default: `'*'`
-
-To keep or remove special comments, exposing the underlying option from [clean-css](https://github.com/GoalSmashers/clean-css). `'*'` for keeping all (default), `1` for keeping first one, `0` for removing all.
-
 #### report
+
 Choices: `'min'`, `'gzip'`  
 Default: `'min'`
 
@@ -69,6 +65,7 @@ cssmin: {
 ```
 
 #### Add a banner
+
 ```js
 cssmin: {
   add_banner: {
@@ -83,6 +80,7 @@ cssmin: {
 ```
 
 #### Minify all contents of a release directory and add a `.min.css` extension
+
 ```js
 cssmin: {
   my_target: {
@@ -122,4 +120,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Tuedsay Aug 26 2014 13:17:00.*
+*This file was generated on Thu Dec 11 2014 12:54:57.*
