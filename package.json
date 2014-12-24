@@ -1,19 +1,12 @@
 {
   "name": "grunt-contrib-cssmin",
-  "description": "Compress CSS files.",
+  "description": "Minify CSS",
   "version": "0.11.0-pre",
-  "homepage": "https://github.com/gruntjs/grunt-contrib-cssmin",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/gruntjs/grunt-contrib-cssmin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gruntjs/grunt-contrib-cssmin/issues"
-  },
+  "repository": "gruntjs/grunt-contrib-cssmin",
   "licenses": [
     {
       "type": "MIT",
@@ -21,29 +14,33 @@
     }
   ],
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">=0.10.0"
   },
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
-    "chalk": "~0.5.0",
-    "clean-css": "~3.0.1",
-    "maxmin": "~1.0.0"
+    "chalk": "^0.5.1",
+    "clean-css": "^3.0.1",
+    "maxmin": "^1.0.0"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-nodeunit": "~0.4.0",
-    "grunt-contrib-clean": "~0.6.0",
-    "grunt-contrib-internal": "~0.4.6",
-    "grunt": "~0.4.1"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-internal": "^0.4.6",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.0"
   },
   "keywords": [
     "gruntplugin",
-    "cssmin"
+    "cssmin",
+    "css",
+    "style",
+    "styles",
+    "stylesheet",
+    "minify",
+    "compress"
   ],
   "files": [
     "tasks",
