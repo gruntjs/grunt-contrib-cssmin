@@ -15,7 +15,7 @@ var maxmin = require('maxmin');
 module.exports = function(grunt) {
   var minify = function(source, options) {
     try {
-      return new CleanCSS(options).minify(source);
+      return new CleanCSS(options).minify(source).styles;
     } catch (err) {
       grunt.log.error(err);
       grunt.fail.warn('CSS minification failed.');
