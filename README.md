@@ -1,13 +1,11 @@
 # grunt-contrib-cssmin v0.11.0-pre [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
-> Compress CSS files.
-
-
+> Minify CSS
 
 
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
+This plugin requires Grunt `>=0.4.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -21,59 +19,36 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 ```
 
-*This plugin was designed to work with Grunt 0.4.x. If you're still using grunt v0.3.x it's strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can't please use [v0.3.2](https://github.com/gruntjs/grunt-contrib-cssmin/tree/grunt-0.3-stable).*
+**Issues with the output should be reported on the clean-css [issue tracker](https://github.com/GoalSmashers/clean-css/issues).**
 
 
 
 ## Cssmin task
 _Run this task with the `grunt cssmin` command._
 
-Task targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
 
-Files are compressed with [clean-css](https://github.com/GoalSmashers/clean-css).
 ### Options
 
-Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines some extra options:
+Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines an extra option:
 
-#### banner
-
-Type: `String`  
-Default: `null`
-
-Prefix the compressed source with the given banner, with a linebreak inbetween.
 
 #### report
 
 Choices: `'min'`, `'gzip'`  
 Default: `'min'`
 
-Either report only minification result or report minification and gzip results.
+Report minification result or both minification and gzip results.
 This is useful to see exactly how well clean-css is performing but using `'gzip'` will make the task take 5-10x longer to complete. [Example output](https://github.com/sindresorhus/maxmin#readme).
 
-### Usage Examples
+### Usage
 
 #### Combine two files into one output file
 
 ```js
 cssmin: {
-  combine: {
+  target: {
     files: {
-      'path/to/output.css': ['path/to/input_one.css', 'path/to/input_two.css']
-    }
-  }
-}
-```
-
-#### Add a banner
-
-```js
-cssmin: {
-  add_banner: {
-    options: {
-      banner: '/* My minified css file */'
-    },
-    files: {
-      'path/to/output.css': ['path/to/**/*.css']
+      'output.css': ['foo.css', 'bar.css']
     }
   }
 }
@@ -83,12 +58,12 @@ cssmin: {
 
 ```js
 cssmin: {
-  my_target: {
+  target: {
     files: [{
       expand: true,
-      cwd: 'release/css/',
+      cwd: 'release/css',
       src: ['*.css', '!*.min.css'],
-      dest: 'release/css/',
+      dest: 'release/css',
       ext: '.min.css'
     }]
   }
@@ -120,4 +95,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Thu Dec 11 2014 12:54:57.*
+*This file was generated on Wed Dec 24 2014 14:56:45.*

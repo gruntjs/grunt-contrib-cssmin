@@ -1,27 +1,12 @@
-# Usage Examples
+# Usage
 
 ## Combine two files into one output file
 
 ```js
 cssmin: {
-  combine: {
+  target: {
     files: {
-      'path/to/output.css': ['path/to/input_one.css', 'path/to/input_two.css']
-    }
-  }
-}
-```
-
-## Add a banner
-
-```js
-cssmin: {
-  add_banner: {
-    options: {
-      banner: '/* My minified css file */'
-    },
-    files: {
-      'path/to/output.css': ['path/to/**/*.css']
+      'output.css': ['foo.css', 'bar.css']
     }
   }
 }
@@ -31,12 +16,12 @@ cssmin: {
 
 ```js
 cssmin: {
-  my_target: {
+  target: {
     files: [{
       expand: true,
-      cwd: 'release/css/',
+      cwd: 'release/css',
       src: ['*.css', '!*.min.css'],
-      dest: 'release/css/',
+      dest: 'release/css',
       ext: '.min.css'
     }]
   }

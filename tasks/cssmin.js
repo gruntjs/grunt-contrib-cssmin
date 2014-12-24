@@ -50,10 +50,6 @@ module.exports = function(grunt) {
         return grunt.log.warn('Destination not written because minified CSS was empty.');
       }
 
-      if (options.banner) {
-        min = options.banner + grunt.util.linefeed + min;
-      }
-
       grunt.file.write(file.dest, min);
 
       grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created: ' + maxmin(max, min, options.report === 'gzip'));
