@@ -1,13 +1,5 @@
-/*
- * grunt-contrib-cssmin
- * http://gruntjs.com/
- *
- * Copyright (c) 2015 Tim Branyen, contributors
- * Licensed under the MIT license.
- */
 'use strict';
-
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.initConfig({
     jshint: {
       all: [
@@ -51,7 +43,7 @@ module.exports = function(grunt) {
       }
     },
     nodeunit: {
-      tests: ['test/*_test.js']
+      tests: ['test/test.js']
     }
   });
 

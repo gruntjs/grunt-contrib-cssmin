@@ -1,10 +1,11 @@
 # Options
 
-Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines two extra options:
+Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines some extra options:
 
 
 ## report
 
+Type: `string`  
 Choices: `'min'`, `'gzip'`  
 Default: `'min'`
 
@@ -14,33 +15,8 @@ This is useful to see exactly how well clean-css is performing but using `'gzip'
 
 #### sourceMap
 
+Type: `boolean`  
 Choices: `true`, `false`  
 Default: `false`
 
-This option can be used to generate a source map for your compiled CSS.
-Set it to `true` to enable source map generation. The source map will be placed
-under the same directory as your target file.
-`/foo/bar.compiled.css` will generate a source map called `/foo/bar.compiled.css.map`.
-
-
-## Passing options to clean-css
-
-```js
-cssmin: {
-  target: {
-    files: [{
-      expand: true,
-      cwd: 'release/css',
-      src: ['*.css', '!*.min.css'],
-      dest: 'release/css',
-      ext: '.min.css'
-    }],
-    options: {
-      shorthandCompacting: false,
-      roundingPrecision: -1
-    }
-  }
-}
-```
-
-For a full list of available options, see [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically) docs.
+Enable Source Maps.

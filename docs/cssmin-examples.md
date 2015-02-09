@@ -4,6 +4,10 @@
 
 ```js
 cssmin: {
+  options: {
+    shorthandCompacting: false,
+    roundingPrecision: -1
+  },
   target: {
     files: {
       'output.css': ['foo.css', 'bar.css']

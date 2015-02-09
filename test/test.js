@@ -11,13 +11,6 @@ exports.cssmin = {
 
     test.done();
   },
-  empty: function(test) {
-    test.expect(1);
-
-    test.ok(!grunt.file.exists('tmp/idontexist.css'), 'Empty minified file should not exist');
-
-    test.done();
-  },
   imports: function(test) {
     test.expect(1);
 

@@ -29,7 +29,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-internal": "^0.4.6",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-nodeunit": "^0.4.0"
   },
   "peerDependencies": {
@@ -46,8 +46,7 @@
     "compress"
   ],
   "files": [
-    "tasks",
-    "LICENSE-MIT"
+    "tasks"
   ],
   "appveyor_id": "ntgfqc3ppk533m84"
 }
