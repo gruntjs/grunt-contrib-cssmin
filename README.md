@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v0.12.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
+# grunt-contrib-cssmin v0.12.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
 > Minify CSS
 
@@ -111,4 +111,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Mon Feb 09 2015 16:36:00.*
+*This file was generated on Mon Feb 09 2015 22:15:44.*
