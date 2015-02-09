@@ -13,46 +13,60 @@ var chalk = require('chalk');
 var maxmin = require('maxmin');
 
 module.exports = function(grunt) {
-  var minify = function(source, options) {
+
+  var minifyCssFiles = function (options, files) {
     try {
-      return new CleanCSS(options).minify(source).styles;
+      return new CleanCSS(options).minify(files);
     } catch (err) {
       grunt.log.error(err);
       grunt.fail.warn('CSS minification failed.');
     }
   };
 
-  grunt.registerMultiTask('cssmin', 'Minify CSS', function() {
-    var options = this.options({
-      report: 'min'
+  var getAvailableFiles = function (filesArray) {
+    return filesArray.filter(function(filepath) {
+      if (!grunt.file.exists(filepath)) {
+        grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found.');
+        return false;
+      } else {
+        return true;
+      }
     });
+  };
 
+  grunt.registerMultiTask('cssmin', 'Minify CSS files with CleanCSS.', function() {
+    var options = this.options({
+      report: 'min',
+      sourceMap: false,
+    });
     this.files.forEach(function(file) {
-      var valid = file.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found.');
-          return false;
-        } else {
-          return true;
-        }
+      var availableFiles = getAvailableFiles(file.src);
+      var unCompiledCssString = '';
+      var cleanCssOptions = { sourceMap: options.sourceMap, target: file.dest };
+      var compiled = minifyCssFiles(cleanCssOptions, availableFiles);
+      var compiledCssString = compiled.styles;
+
+      availableFiles.forEach(function(file){
+        var src = grunt.file.read(file);
+        unCompiledCssString += src;
       });
 
-      var max = '';
-      var min = valid.map(function(file) {
-        var src = grunt.file.read(file);
-        max += src;
-        options.relativeTo = path.dirname(file);
-        return minify(src, options);
-      }).join('');
-
-      if (min.length === 0) {
+      if (compiledCssString.length === 0) {
         return grunt.log.warn('Destination not written because minified CSS was empty.');
       }
 
-      grunt.file.write(file.dest, min);
+      //source map
+      if (options.sourceMap) {
+        var compiledFileName = file.dest.split('/').pop();
+        var sourceMapString = compiled.sourceMap.toString();
+        compiledCssString += '\n' + '/*# sourceMappingURL='+compiledFileName+'.map */';
+        grunt.file.write(file.dest+'.map', sourceMapString);
+      }
 
-      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created: ' + maxmin(max, min, options.report === 'gzip'));
+      //write compiled css file
+      grunt.file.write(file.dest, compiledCssString);
+      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created.');
+      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created: ' + maxmin(unCompiledCssString, compiledCssString, options.report === 'gzip'));
     });
   });
 };
