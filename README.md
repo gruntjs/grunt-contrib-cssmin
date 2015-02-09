@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v0.11.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
+# grunt-contrib-cssmin v0.12.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
 > Minify CSS
 
@@ -29,11 +29,12 @@ _Run this task with the `grunt cssmin` command._
 
 ### Options
 
-Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines two extra options:
+Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines some extra options:
 
 
 #### report
 
+Type: `string`  
 Choices: `'min'`, `'gzip'`  
 Default: `'min'`
 
@@ -43,36 +44,11 @@ This is useful to see exactly how well clean-css is performing but using `'gzip'
 
 ###### sourceMap
 
+Type: `boolean`  
 Choices: `true`, `false`  
 Default: `false`
 
-This option can be used to generate a source map for your compiled CSS.
-Set it to `true` to enable source map generation. The source map will be placed
-under the same directory as your target file.
-`/foo/bar.compiled.css` will generate a source map called `/foo/bar.compiled.css.map`.
-
-
-#### Passing options to clean-css
-
-```js
-cssmin: {
-  target: {
-    files: [{
-      expand: true,
-      cwd: 'release/css',
-      src: ['*.css', '!*.min.css'],
-      dest: 'release/css',
-      ext: '.min.css'
-    }],
-    options: {
-      shorthandCompacting: false,
-      roundingPrecision: -1
-    }
-  }
-}
-```
-
-For a full list of available options, see [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically) docs.
+Enable Source Maps.
 
 ### Usage
 
@@ -80,6 +56,10 @@ For a full list of available options, see [clean-css](https://github.com/jakubpa
 
 ```js
 cssmin: {
+  options: {
+    shorthandCompacting: false,
+    roundingPrecision: -1
+  },
   target: {
     files: {
       'output.css': ['foo.css', 'bar.css']
@@ -107,6 +87,7 @@ cssmin: {
 
 ## Release History
 
+ * 2015-02-09   v0.12.0   Add `sourceMap` option.
  * 2014-12-24   v0.11.0   Bump `clean-css` to 3.0.1. Remove `banner` option.
  * 2014-06-11   v0.10.0   update clean-css v2.2.0
  * 2014-02-01   v0.9.0   refactor. remove grunt-lib-contrib dependency. backwards-compatibly remove `false` choice from `report`.
@@ -130,4 +111,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Mon Feb 09 2015 09:41:24.*
+*This file was generated on Mon Feb 09 2015 16:36:00.*
