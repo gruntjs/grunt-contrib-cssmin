@@ -17,20 +17,19 @@ module.exports = function (grunt) {
   };
 
   grunt.registerMultiTask('cssmin', 'Minify CSS', function () {
-    var options = this.options({
-      report: 'min',
-      sourceMap: false
-    });
-
     this.files.forEach(function (file) {
+      var options = this.options({
+        report: 'min',
+        sourceMap: false
+      });
+
       var availableFiles = getAvailableFiles(file.src);
       var compiled = '';
 
+      options.target = file.dest;
+
       try {
-        compiled = new CleanCSS({
-          sourceMap: options.sourceMap,
-          target: file.dest
-        }).minify(availableFiles);
+        compiled = new CleanCSS(options).minify(availableFiles);
       } catch (err) {
         grunt.log.error(err);
         grunt.warn('CSS minification failed');
@@ -50,6 +49,6 @@ module.exports = function (grunt) {
 
       grunt.file.write(file.dest, compiledCssString);
       grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created ' + chalk.dim(maxmin(unCompiledCssString, compiledCssString, options.report === 'gzip')));
-    });
+    }, this);
   });
 };
