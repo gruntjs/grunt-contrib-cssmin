@@ -41,14 +41,20 @@ module.exports = function(grunt) {
     });
     this.files.forEach(function(file) {
       var availableFiles = getAvailableFiles(file.src);
-      var cleanCssOptions = { sourceMap: true, target: file.dest };
+      var unCompiledCssString = '';
+      var cleanCssOptions = { sourceMap: options.sourceMap, target: file.dest };
       var compiled = minifyCssFiles(cleanCssOptions, availableFiles);
       var compiledCssString = compiled.styles;
+
+      availableFiles.forEach(function(file){
+        var src = grunt.file.read(file);
+        unCompiledCssString += src;
+      });
 
       if (compiledCssString.length === 0) {
         return grunt.log.warn('Destination not written because minified CSS was empty.');
       }
-            
+
       //source map
       if (options.sourceMap) {
         var compiledFileName = file.dest.split('/').pop();
@@ -60,6 +66,7 @@ module.exports = function(grunt) {
       //write compiled css file
       grunt.file.write(file.dest, compiledCssString);
       grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created.');
+      grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created: ' + maxmin(unCompiledCssString, compiledCssString, options.report === 'gzip'));
     });
   });
 };
