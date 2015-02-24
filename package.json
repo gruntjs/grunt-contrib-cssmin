@@ -20,7 +20,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "clean-css": "^3.0.1",
     "maxmin": "^1.0.0"
   },
