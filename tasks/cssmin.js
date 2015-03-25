@@ -34,12 +34,12 @@ module.exports = function (grunt) {
 
         // something went horribly wrong
         if (compiled.errors.length) {
-          grunt.warn(compiled.errors);
+          grunt.warn(compiled.errors.toString());
         }
 
         // something went mildly wrong
         if (compiled.warnings.length) {
-          grunt.warn(compiled.warnings);
+          grunt.warn(compiled.warnings.toString());
         }
 
         if (options.debug) {
