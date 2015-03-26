@@ -39,7 +39,7 @@ module.exports = function (grunt) {
 
         // something went mildly wrong
         if (compiled.warnings.length) {
-          grunt.warn(compiled.warnings.toString());
+          grunt.log.error(compiled.warnings.toString());
         }
 
         if (options.debug) {
