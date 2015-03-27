@@ -21,6 +21,10 @@ module.exports = function (grunt) {
       maps: 0,
       files: 0
     };
+    var size = {
+      before: 0,
+      after: 0
+    };
 
     this.files.forEach(function (file) {
       var options = this.options({
@@ -48,6 +52,8 @@ module.exports = function (grunt) {
         return grunt.file.read(file);
       }).join('');
 
+      size.before += unCompiledCssString.length;
+
       if (options.sourceMap) {
         compiledCssString += '\n' + '/*# sourceMappingURL=' + path.basename(file.dest) + '.map */';
         grunt.file.write(file.dest + '.map', compiled.sourceMap.toString());
@@ -57,7 +63,9 @@ module.exports = function (grunt) {
 
       grunt.file.write(file.dest, compiledCssString);
       created.files++;
+      size.after += compiledCssString.length;
       grunt.verbose.writeln('File ' + chalk.cyan(file.dest) + ' created ' + chalk.dim(maxmin(unCompiledCssString, compiledCssString, options.report === 'gzip')));
+
     }, this);
 
     if (created.maps > 0) {
@@ -65,7 +73,7 @@ module.exports = function (grunt) {
     }
 
     if (created.files > 0) {
-      grunt.log.ok(created.files + ' ' + grunt.util.pluralize(this.files.length, 'file/files') + ' created.');
+      grunt.log.ok(created.files + ' ' + grunt.util.pluralize(this.files.length, 'file/files') + ' created. ' + chalk.dim(maxmin(size.before, size.after)));
     } else {
       grunt.log.warn('No files created.');
     }
