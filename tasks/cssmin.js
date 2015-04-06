@@ -43,7 +43,7 @@ module.exports = function (grunt) {
         }
 
         if (options.debug) {
-          console.log(compiled.stats);
+          console.log.writeln(compiled.stats);
         }
       } catch (err) {
         grunt.log.error(err);
