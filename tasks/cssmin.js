@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         compiled = new CleanCSS(options).minify(availableFiles);
       } catch (err) {
         grunt.log.error(err);
-        grunt.warn('CSS minification failed at '+ availableFiles + ".");
+        grunt.warn('CSS minification failed at '+ availableFiles + '.');
       }
 
       var compiledCssString = compiled.styles;
