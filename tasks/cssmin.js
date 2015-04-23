@@ -1,4 +1,5 @@
 'use strict';
+
 var path = require('path');
 var CleanCSS = require('clean-css');
 var chalk = require('chalk');
@@ -10,9 +11,8 @@ module.exports = function (grunt) {
       if (!grunt.file.exists(filepath)) {
         grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found');
         return false;
-      } else {
-        return true;
       }
+      return true;
     });
   };
 
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
         compiled = new CleanCSS(options).minify(availableFiles);
       } catch (err) {
         grunt.log.error(err);
-        grunt.warn('CSS minification failed at '+ availableFiles + '.');
+        grunt.warn('CSS minification failed at ' + availableFiles + '.');
       }
 
       var compiledCssString = compiled.styles;
