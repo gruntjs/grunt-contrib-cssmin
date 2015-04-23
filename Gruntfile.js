@@ -1,4 +1,8 @@
 'use strict';
+var path = require('path');
+function absolutePath(file) {
+  return path.join(__dirname, file);
+}
 module.exports = function (grunt) {
   grunt.initConfig({
     jshint: {
@@ -17,6 +21,15 @@ module.exports = function (grunt) {
     cssmin: {
       options: {
         sourceMap: true
+      },
+      absolute: {
+        files: [{
+          src: [
+            'test/fixtures/input_one.css',
+            'test/fixtures/input_two.css'
+          ].map(absolutePath),
+          dest: absolutePath('tmp/absolute.css')
+        }]
       },
       compress: {
         files: {
