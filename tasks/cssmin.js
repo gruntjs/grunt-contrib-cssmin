@@ -1,6 +1,7 @@
 'use strict';
 
 var path = require('path');
+var util = require('util');
 var CleanCSS = require('clean-css');
 var chalk = require('chalk');
 var maxmin = require('maxmin');
@@ -41,8 +42,18 @@ module.exports = function (grunt) {
 
       try {
         compiled = new CleanCSS(options).minify(availableFiles);
-        if (compiled.errors && compiled.errors.length) {
-            throw compiled.errors.join('\n');
+
+        if (compiled.errors.length) {
+          grunt.warn(compiled.errors.toString());
+          return;
+        }
+
+        if (compiled.warnings.length) {
+          grunt.log.error(compiled.warnings.toString());
+        }
+
+        if (options.debug) {
+          grunt.log.writeln(util.format(compiled.stats));
         }
       } catch (err) {
         grunt.log.error(err);
