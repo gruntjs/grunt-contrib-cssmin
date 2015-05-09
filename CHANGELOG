@@ -1,3 +1,9 @@
+v0.12.3:
+  date: 2015-05-09
+  changes:
+    - Improve reporting of errors and warnings.
+    - Log out written files and the saved size.
+    - Fix absolute paths.
 v0.12.2:
   date: 2015-02-20
   changes:
