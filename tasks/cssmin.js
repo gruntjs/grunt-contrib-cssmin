@@ -108,6 +108,8 @@ module.exports = function (grunt) {
         } else {
           grunt.log.warn('No files created.');
         }
+        
+        done();
       
     });
     
