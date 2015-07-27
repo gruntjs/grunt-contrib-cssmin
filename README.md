@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v0.12.3 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
+# grunt-contrib-cssmin v0.13.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
 > Minify CSS
 
@@ -87,6 +87,7 @@ cssmin: {
 
 ## Release History
 
+ * 2015-07-27   v0.13.0   bump to cssmin ~3.3.0
  * 2015-05-09   v0.12.3   Improve reporting of errors and warnings. Log out written files and the saved size. Fix absolute paths.
  * 2015-02-20   v0.12.2   Set the `rebase` option to `false` by default.
  * 2015-02-09   v0.12.0   Add `sourceMap` option.
@@ -113,4 +114,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Sat May 09 2015 12:09:52.*
+*This file was generated on Mon Jul 27 2015 12:36:37.*
