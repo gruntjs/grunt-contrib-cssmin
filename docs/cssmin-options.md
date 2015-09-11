@@ -13,7 +13,7 @@ Report minification result or both minification and gzip results.
 This is useful to see exactly how well clean-css is performing but using `'gzip'` will make the task take 5-10x longer to complete. [Example output](https://github.com/sindresorhus/maxmin#readme).
 
 
-#### sourceMap
+## sourceMap
 
 Type: `boolean`  
 Choices: `true`, `false`  

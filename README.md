@@ -42,7 +42,7 @@ Report minification result or both minification and gzip results.
 This is useful to see exactly how well clean-css is performing but using `'gzip'` will make the task take 5-10x longer to complete. [Example output](https://github.com/sindresorhus/maxmin#readme).
 
 
-###### sourceMap
+#### sourceMap
 
 Type: `boolean`  
 Choices: `true`, `false`  
@@ -114,4 +114,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Mon Jul 27 2015 12:36:37.*
+*This file was generated on Fri Sep 11 2015 22:13:17.*
