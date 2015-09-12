@@ -2,21 +2,25 @@
 
 var grunt = require('grunt');
 
+function readFileAndRemoveNewlines(file) {
+  return grunt.file.read(file).replace(/\n/g, '');
+}
+
 exports.cssmin = {
   main: function(test) {
     test.expect(1);
 
-    var expect = grunt.file.read('test/expected/style.css').replace(/\n/g, '');
-    var result = grunt.file.read('tmp/style.css').replace(/\n/g, '');
-    test.equal(expect, result, 'should concat and minify an array of css files in order using clean-css');
+    var expect = readFileAndRemoveNewlines('test/expected/style.css');
+    var result = readFileAndRemoveNewlines('tmp/style.css');
+    test.equal(expect, result, 'should concat and minify an array of CSS files in order using clean-css');
 
     test.done();
   },
   imports: function(test) {
     test.expect(1);
 
-    var expect = grunt.file.read('test/expected/inline_import.css').replace(/\n/g, '');
-    var result = grunt.file.read('tmp/inline_import.css').replace(/\n/g, '');
+    var expect = readFileAndRemoveNewlines('test/expected/inline_import.css');
+    var result = readFileAndRemoveNewlines('tmp/inline_import.css');
     test.equal(expect, result, 'should inline @import');
 
     test.done();
@@ -24,8 +28,8 @@ exports.cssmin = {
   absolute: function(test) {
     test.expect(1);
 
-    var expect = grunt.file.read('test/expected/absolute.css').replace(/\n/g, '');
-    var result = grunt.file.read('tmp/absolute.css').replace(/\n/g, '');
+    var expect = readFileAndRemoveNewlines('test/expected/absolute.css');
+    var result = readFileAndRemoveNewlines('tmp/absolute.css');
     test.equal(expect, result, 'should perform the standard tasks when given absolute paths');
 
     test.done();
