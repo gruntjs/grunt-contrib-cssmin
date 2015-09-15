@@ -1,3 +1,8 @@
+v0.14.0:
+  date: 2015-09-15
+  changes:
+    - bump to cssmin ~3.4.0
+    - minor test fixes
 v0.13.0:
   date: 2015-07-27
   changes:
