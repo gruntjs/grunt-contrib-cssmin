@@ -26,6 +26,17 @@ module.exports = function (grunt) {
       before: 0,
       after: 0
     };
+    
+    
+    var _options = this.options({ cwd: '' });
+    if (_options.cwd) {
+      this.files.forEach(function (f) {
+        f.dest = path.join(_options.cwd, f.dest);
+        f.orig.src.forEach(function (filepath, i, arr) {
+          arr[i] = path.join(_options.cwd, filepath);
+        });
+      })
+    }
 
     this.files.forEach(function (file) {
       var options = this.options({
