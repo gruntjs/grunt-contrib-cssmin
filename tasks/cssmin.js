@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         f.orig.src.forEach(function (filepath, i, arr) {
           arr[i] = path.join(_options.cwd, filepath);
         });
-      })
+      });
     }
 
     this.files.forEach(function (file) {
