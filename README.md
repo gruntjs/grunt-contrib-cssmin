@@ -50,6 +50,14 @@ Default: `false`
 
 Enable Source Maps.
 
+
+#### cwd
+
+Type: `String`   
+Default: ``
+
+Change working directory for all files in task.
+
 ### Usage
 
 #### Combine two files into one output file
