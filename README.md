@@ -29,7 +29,7 @@ _Run this task with the `grunt cssmin` command._
 
 ### Options
 
-Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-programmatically). In addition this task defines some extra options:
+Options are passed to [clean-css](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api). In addition this task defines some extra options:
 
 
 #### report
