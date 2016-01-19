@@ -41,6 +41,24 @@ module.exports = function (grunt) {
       options.relativeTo = path.dirname(availableFiles[0]);
 
       try {
+        if(options.sourceMap && options.sourceMapIn) {
+          if(typeof options.sourceMapIn === 'function') {
+            options.sourceMap = options.sourceMap && options.sourceMapIn(availableFiles[0]);
+          } else if(options.sourceMapIn === true) {
+            var content = grunt.file.read(availableFiles[0], {encoding: 'utf8'});
+            var sourceMapMatch = content.match(/sourceMappingURL\=([^ ]*)/);
+            if(sourceMapMatch && sourceMapMatch.length === 2) {
+              var sourceMap = sourceMapMatch[1];
+              if(sourceMap.indexOf('/') === -1 || sourceMap.indexOf('/') > 0) {
+                sourceMap = options.relativeTo + '/' + sourceMap;
+                if(grunt.file.exists(sourceMap)) {
+                  options.sourceMap = grunt.file.read(sourceMap, {encoding: 'utf8'});
+                }
+              }
+            }
+          }
+        }
+
         compiled = new CleanCSS(options).minify(availableFiles);
 
         if (compiled.errors.length) {

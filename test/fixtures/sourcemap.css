@@ -1,0 +1,17 @@
+/* main stylesheet */
+/* Block component */
+.block {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Circle component */
+.circle {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
+
+/*# sourceMappingURL=sourcemap.css.map */
