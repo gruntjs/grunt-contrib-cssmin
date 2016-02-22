@@ -3,7 +3,7 @@
 var grunt = require('grunt');
 
 function readFileAndRemoveNewlines(file) {
-  return grunt.file.read(file).replace(/\n/g, '');
+  return grunt.file.read(file).replace(/\r\n/g, '\n').replace(/\n/g, '');
 }
 
 exports.cssmin = {
