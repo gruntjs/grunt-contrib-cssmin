@@ -1,3 +1,9 @@
+v1.0.0:
+  date: 2016-03-04
+  changes:
+    - Updated docs.
+    - Point main to task and removed peerDeps.
+    - Update clean-css to v3.4.1.
 v0.14.0:
   date: 2015-09-15
   changes:
