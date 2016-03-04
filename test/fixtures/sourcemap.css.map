@@ -1,0 +1,8 @@
+{
+"version": 3,
+"mappings": "AAAA,qBAAqB;ACArB,qBAAqB;AACrB,MAAO;EACL,OAAO,EAAE,KAAK;EACd,OAAO,EAAE,IAAI;EACb,MAAM,EAAE,IAAI;;;ACJd,sBAAsB;AACtB,OAAQ;EACN,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,aAAa,EAAE,IAAI",
+"sources": ["main.scss","components/_block.scss","components/_circle.scss"],
+"sourcesContent": ["/* main stylesheet */\n@import \"components/block\";\n@import \"components/circle\";\n","/* Block component */\n.block {\n  display: block;\n  padding: 10px;\n  margin: 10px;\n}\n","/* Circle component */\n.circle {\n  display: inline-block;\n  height: 100px;\n  width: 100px;\n  border-radius: 50px;\n}\n"],
+"names": [],
+"file": "sourcemap.css"
+}

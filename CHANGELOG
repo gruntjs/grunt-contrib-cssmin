@@ -1,3 +1,7 @@
+v0.15.0:
+  date: 2016-01-19
+  changes:
+    - added sourceMapIn option
 v0.14.0:
   date: 2015-09-15
   changes:

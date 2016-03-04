@@ -53,6 +53,30 @@ module.exports = function (grunt) {
             'test/fixtures/inner/input_inline_import.css'
           ]
         }
+      },
+      sourceMapIn: {
+        options: {
+          sourceMap: true,
+          sourceMapInlineSources: true,
+          sourceMapIn: true
+        },
+        files: [{
+          src: [absolutePath('test/fixtures/sourcemap.css')],
+          dest: absolutePath('tmp/sourcemap.css')
+        }]
+      },
+      sourceMapInFunction: {
+        options: {
+          sourceMap: true,
+          sourceMapInlineSources: true,
+          sourceMapIn: function(filename) {
+            return grunt.file.read(filename + '.map', {encoding: 'utf8'});
+          }
+        },
+        files: [{
+          src: [absolutePath('test/fixtures/sourcemap.css')],
+          dest: absolutePath('tmp2/sourcemap.css')
+        }]
       }
     },
     nodeunit: {

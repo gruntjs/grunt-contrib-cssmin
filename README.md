@@ -50,6 +50,18 @@ Default: `false`
 
 Enable Source Maps.
 
+#### sourceMapIn
+
+Type: `boolean`, `function`  
+Choices: `true`, `false`, `function`
+Default: `undefined`
+
+Method for processing existing sourceMap. When set to true `cssmin` looks for the location of the sourceMap by parsing the `sourceMappingURL` and reading that file from disk (relative to input CSS file).
+
+When a function is supplied cssmin calls this function with the filename of the input CSS file as argument. The function is expected to return a value that is supplied to `clean-css` as `sourceMap` argument. See [clean-css documentation](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) for further explanation.
+
+Note: this property only works when `sourceMap` is also set to true.
+
 ### Usage
 
 #### Combine two files into one output file
@@ -115,4 +127,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Tue Sep 15 2015 10:19:12.*
+*This file was generated on Tue Jan 19 2016 09:11:31.*
