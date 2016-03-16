@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v1.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
+# grunt-contrib-cssmin v1.0.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
 > Minify CSS
 
@@ -86,6 +86,7 @@ cssmin: {
 
 ## Release History
 
+ * 2016-03-16   v1.0.1   downgrade maxmin to support node 0.10
  * 2016-03-04   v1.0.0   Updated docs. Point main to task and removed peerDeps. Update clean-css to v3.4.1.
  * 2015-09-15   v0.14.0   bump to cssmin ~3.4.0 minor test fixes
  * 2015-07-27   v0.13.0   bump to cssmin ~3.3.0
@@ -115,4 +116,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Fri Mar 04 2016 16:00:23.*
+*This file was generated on Wed Mar 16 2016 10:47:01.*
