@@ -1,6 +1,7 @@
 {
   "name": "grunt-contrib-cssmin",
   "description": "Minify CSS",
+  
   "version": "1.0.0",
   "author": {
     "name": "Grunt Team",
