@@ -18,6 +18,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "clean-css": "~3.4.2",
+    "gzip-size": "2.1.0",
     "maxmin": "^2.1.0"
   },
   "devDependencies": {
