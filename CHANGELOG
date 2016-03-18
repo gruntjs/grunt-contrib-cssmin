@@ -1,7 +1,7 @@
 v1.0.1:
   date: 2016-03-16
   changes:
-    - downgrade maxmin to support node 0.10
+    - Downgrade maxmin to support Node.js 0.10.
 v1.0.0:
   date: 2016-03-04
   changes:
@@ -11,12 +11,12 @@ v1.0.0:
 v0.14.0:
   date: 2015-09-15
   changes:
-    - bump to cssmin ~3.4.0
-    - minor test fixes
+    - Bump to cssmin ~3.4.0.
+    - Minor test fixes.
 v0.13.0:
   date: 2015-07-27
   changes:
-    - bump to cssmin ~3.3.0
+    - Bump to cssmin ~3.3.0.
 v0.12.3:
   date: 2015-05-09
   changes:
@@ -39,19 +39,19 @@ v0.11.0:
 v0.10.0:
   date: 2014-06-11
   changes:
-    - update clean-css v2.2.0
+    - Update clean-css v2.2.0.
 v0.9.0:
   date: 2014-02-01
   changes:
-    - refactor. remove grunt-lib-contrib dependency. backwards-compatibly remove `false` choice from `report`.
+    - Refactor. Remove grunt-lib-contrib dependency. Backwards-compatibly remove `false` choice from `report`.
 v0.8.0:
   date: 2014-02-14
   changes:
-    - update clean-css v2.1.0
+    - Update clean-css v2.1.0.
 v0.7.0:
   date: 2013-11-23
   changes:
-    - update clean-css v2.0.0
+    - Update clean-css v2.0.0.
 v0.6.2:
   date: 2013-09-14
   changes:
@@ -59,24 +59,24 @@ v0.6.2:
 v0.6.1:
   date: 2013-05-25
   changes:
-    - Support import in-lining vis clean-css ~1.0.4.
+    - Support import in-lining via clean-css ~1.0.4.
 v0.6.0:
   date: 2013-04-05
   changes:
-    - Update clean-css dependency to ~1.0.0
+    - Update clean-css dependency to ~1.0.0.
 v0.5.0:
   date: 2013-03-14
   changes:
-   - Support for 'report' option (false by default)
+   - Support for `report` option (false by default).
 v0.4.2:
   date: 2013-03-10
   changes:
-    - Add banner option
-    - Support clean-css keepSpecialComments
+    - Add `banner` option.
+    - Support clean-css `keepSpecialComments`.
 v0.4.1:
   date: 2013-02-17
   changes:
-    - Update clean-css dependency to ~0.10.0
+    - Update clean-css dependency to ~0.10.0.
 v0.4.0:
   date: 2013-02-15
   changes:
@@ -90,7 +90,7 @@ v0.4.0rc5:
   date: 2013-01-09
   changes:
     - Updating to work with grunt v0.4.0rc5.
-    - Switching to this.files api.
+    - Switching to `this.files` API.
 v0.3.2:
   date: 2012-11-01
   changes:
