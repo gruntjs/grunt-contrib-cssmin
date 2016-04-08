@@ -28,17 +28,17 @@ module.exports = function (grunt) {
     };
 
     this.files.forEach(function (file) {
+      var availableFiles = getAvailableFiles(file.src);
       var options = this.options({
         rebase: false,
         report: 'min',
+        relativeTo: path.dirname(availableFiles[0]),
         sourceMap: false
       });
 
-      var availableFiles = getAvailableFiles(file.src);
       var compiled = '';
 
       options.target = file.dest;
-      options.relativeTo = path.dirname(availableFiles[0]);
 
       try {
         compiled = new CleanCSS(options).minify(availableFiles);
