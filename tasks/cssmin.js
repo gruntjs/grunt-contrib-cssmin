@@ -36,31 +36,33 @@ module.exports = function (grunt) {
 
       var availableFiles = getAvailableFiles(file.src);
       var compiled = '';
+      var compiledCssString = '';
 
       options.target = file.dest;
       options.relativeTo = path.dirname(availableFiles[0]);
 
-      try {
-        compiled = new CleanCSS(options).minify(availableFiles);
+      availableFiles.forEach(function(available) {
+        try {
+          compiled = new CleanCSS(options).minify([available]);
 
-        if (compiled.errors.length) {
-          grunt.warn(compiled.errors.toString());
-          return;
+          if (compiled.errors.length) {
+            grunt.warn(compiled.errors.toString());
+            return;
+          }
+
+          if (compiled.warnings.length) {
+            grunt.log.error(compiled.warnings.toString());
+          }
+
+          if (options.debug) {
+            grunt.log.writeln(util.format(compiled.stats));
+          }
+        } catch (err) {
+          grunt.log.error(err);
+          grunt.warn('CSS minification failed at ' + available + '.');
         }
-
-        if (compiled.warnings.length) {
-          grunt.log.error(compiled.warnings.toString());
-        }
-
-        if (options.debug) {
-          grunt.log.writeln(util.format(compiled.stats));
-        }
-      } catch (err) {
-        grunt.log.error(err);
-        grunt.warn('CSS minification failed at ' + availableFiles + '.');
-      }
-
-      var compiledCssString = compiled.styles;
+        compiledCssString += compiled.styles;
+      });
 
       var unCompiledCssString = availableFiles.map(function (file) {
         return grunt.file.read(file);
