@@ -38,7 +38,7 @@ module.exports = function (grunt) {
       var compiled = '';
 
       options.target = file.dest;
-      options.relativeTo = path.dirname(availableFiles[0]);
+      options.relativeTo = path.dirname(availableFiles[0] || '');
 
       try {
         compiled = new CleanCSS(options).minify(availableFiles);
