@@ -56,7 +56,7 @@ Enable Source Maps.
 ```js
 cssmin: {
   options: {
-    shorthandCompacting: false,
+    mergeIntoShorthands: false,
     roundingPrecision: -1
   },
   target: {
@@ -117,4 +117,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Wed Aug 31 2016 23:09:56.*
+*This file was generated on Mon Jan 23 2017 23:33:41.*
