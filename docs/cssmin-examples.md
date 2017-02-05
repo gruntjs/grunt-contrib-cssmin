@@ -5,7 +5,7 @@
 ```js
 cssmin: {
   options: {
-    shorthandCompacting: false,
+    mergeIntoShorthands: false,
     roundingPrecision: -1
   },
   target: {

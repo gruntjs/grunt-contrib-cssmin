@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-cssmin",
   "description": "Minify CSS",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "chalk": "^1.0.0",
-    "clean-css": "~3.4.2",
+    "clean-css": "~4.0.3",
     "maxmin": "^1.1.0"
   },
   "devDependencies": {

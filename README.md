@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v1.0.2 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
+# grunt-contrib-cssmin v2.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
 > Minify CSS
 
@@ -56,7 +56,7 @@ Enable Source Maps.
 ```js
 cssmin: {
   options: {
-    shorthandCompacting: false,
+    mergeIntoShorthands: false,
     roundingPrecision: -1
   },
   target: {
@@ -86,6 +86,7 @@ cssmin: {
 
 ## Release History
 
+ * 2017-02-02   v2.0.0   Update clean-css to v4.0.3.
  * 2016-08-31   v1.0.2   Fix issues for node 6.
  * 2016-03-16   v1.0.1   Downgrade maxmin to support Node.js 0.10.
  * 2016-03-04   v1.0.0   Updated docs. Point main to task and removed peerDeps. Update clean-css to v3.4.1.
@@ -117,4 +118,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Wed Aug 31 2016 23:09:56.*
+*This file was generated on Thu Feb 02 2017 22:53:32.*
