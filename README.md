@@ -18,7 +18,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 ```
 
-**Issues with the output should be reported on the clean-css [issue tracker](https://github.com/GoalSmashers/clean-css/issues).**
+**Issues with the output should be reported on the clean-css [issue tracker](https://github.com/jakubpawlowicz/clean-css/issues).**
 
 
 
@@ -118,4 +118,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Thu Feb 02 2017 22:53:32.*
+*This file was generated on Tue Apr 04 2017 18:53:52.*
