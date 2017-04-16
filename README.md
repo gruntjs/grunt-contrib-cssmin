@@ -83,6 +83,20 @@ cssmin: {
 }
 ```
 
+#### Minify all contents of a source directory and flatten the filepath output:
+```js
+cssmin: {
+  minify: {
+    expand: true,
+    flatten: true,
+    cwd: 'src/css/',
+    src: '*.css',
+    dest: 'public/css/',
+    ext: '.min.css'
+  }
+}
+```
+
 
 ## Release History
 
