@@ -76,6 +76,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'test',
-    'build-contrib'
+    'contrib-core',
+    'contrib-ci:skipIfExists'
   ]);
 };

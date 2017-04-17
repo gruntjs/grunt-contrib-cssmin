@@ -1,3 +1,7 @@
+v2.1.0:
+  date: 2017-04-17
+  changes:
+    - Set required Node.js version to >=4 since clean-css 4.x requires that.
 v2.0.0:
   date: 2017-02-02
   changes:

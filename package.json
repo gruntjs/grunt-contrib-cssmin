@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-cssmin",
   "description": "Minify CSS",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
@@ -9,7 +9,7 @@
   "repository": "gruntjs/grunt-contrib-cssmin",
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.0"
   },
   "main": "tasks/cssmin.js",
   "scripts": {
@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "chalk": "^1.0.0",
-    "clean-css": "~4.0.3",
-    "maxmin": "^1.1.0"
+    "clean-css": "~4.0.12",
+    "maxmin": "^2.1.0"
   },
   "devDependencies": {
     "grunt": "^1.0.0",
