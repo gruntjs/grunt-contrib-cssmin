@@ -33,5 +33,14 @@ exports.cssmin = {
     test.equal(expect, result, 'should perform the standard tasks when given absolute paths');
 
     test.done();
+  },
+  rebase: function(test) {
+    test.expect(1);
+
+    var expect = readFileAndRemoveNewlines('test/expected/rebase.css');
+    var result = readFileAndRemoveNewlines('tmp/rebase.css');
+    test.equal(expect, result, 'should rebase url imports correctly');
+
+    test.done();
   }
 };
