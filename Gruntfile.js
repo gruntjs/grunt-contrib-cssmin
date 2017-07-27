@@ -53,6 +53,16 @@ module.exports = function (grunt) {
             'test/fixtures/inner/input_inline_import.css'
           ]
         }
+      },
+      rebase: {
+        options: {
+          rebase: true
+        },
+        files: {
+          'tmp/rebase.css': [
+            'test/fixtures/rebase.css'
+          ]
+        }
       }
     },
     nodeunit: {
