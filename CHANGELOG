@@ -1,3 +1,7 @@
+v2.2.1:
+  date: 2017-07-27
+  changes:
+    - Fix issue with `relativeTo` for clean-css v4.x.
 v2.2.0:
   date: 2017-05-10
   changes:

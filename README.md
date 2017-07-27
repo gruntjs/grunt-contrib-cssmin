@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v2.2.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
+# grunt-contrib-cssmin v2.2.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
 
 > Minify CSS
 
@@ -86,6 +86,7 @@ cssmin: {
 
 ## Release History
 
+ * 2017-07-27   v2.2.1   Fix issue with `relativeTo` for clean-css v4.x.
  * 2017-05-10   v2.2.0   Update clean-css to v4.1.1.
  * 2017-04-17   v2.1.0   Set required Node.js version to >=4 since clean-css 4.x requires that.
  * 2017-02-02   v2.0.0   Update clean-css to v4.0.3.
@@ -120,4 +121,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Wed May 10 2017 18:02:52.*
+*This file was generated on Thu Jul 27 2017 11:31:20.*
