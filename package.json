@@ -4,28 +4,28 @@
   "version": "2.2.1",
   "author": {
     "name": "Grunt Team",
-    "url": "http://gruntjs.com/"
+    "url": "https://gruntjs.com/"
   },
   "repository": "gruntjs/grunt-contrib-cssmin",
   "license": "MIT",
   "engines": {
-    "node": ">=4.0"
+    "node": ">=6.0"
   },
   "main": "tasks/cssmin.js",
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
-    "chalk": "^1.0.0",
-    "clean-css": "~4.1.1",
+    "chalk": "^2.4.1",
+    "clean-css": "~4.2.1",
     "maxmin": "^2.1.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-internal": "^1.1.0",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-nodeunit": "^1.0.0"
+    "grunt": "^1.0.3",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-internal": "^3.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^2.0.0"
   },
   "keywords": [
     "gruntplugin",
