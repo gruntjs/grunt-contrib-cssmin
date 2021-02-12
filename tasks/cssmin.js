@@ -29,7 +29,6 @@ module.exports = function (grunt) {
 
     this.files.forEach(function (file) {
       var options = this.options({
-        rebase: false,
         report: 'min',
         sourceMap: false
       });
@@ -37,7 +36,9 @@ module.exports = function (grunt) {
       var availableFiles = getAvailableFiles(file.src);
       var compiled = '';
 
-      options.rebaseTo = path.dirname(file.dest);
+      if (Boolean(options.rebase)) {
+        options.rebaseTo = path.dirname(file.dest);
+      }
 
       try {
         compiled = new CleanCSS(options).minify(availableFiles);
