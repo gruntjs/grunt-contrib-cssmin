@@ -34,6 +34,15 @@ exports.cssmin = {
 
     test.done();
   },
+  noRebase: function(test) {
+    test.expect(1);
+
+    var expect = readFileAndRemoveNewlines('test/expected/no-rebase.css');
+    var result = readFileAndRemoveNewlines('tmp/no-rebase.css');
+    test.equal(expect, result, 'should not rebase url imports');
+
+    test.done();
+  },
   rebase: function(test) {
     test.expect(1);
 
