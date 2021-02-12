@@ -54,6 +54,13 @@ module.exports = function (grunt) {
           ]
         }
       },
+      noRebase: {
+        files: {
+          'tmp/no-rebase.css': [
+            'test/fixtures/no-rebase.css'
+          ]
+        }
+      },
       rebase: {
         options: {
           rebase: true
