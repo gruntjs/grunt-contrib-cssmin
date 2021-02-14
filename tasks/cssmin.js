@@ -36,7 +36,7 @@ module.exports = function (grunt) {
       var availableFiles = getAvailableFiles(file.src);
       var compiled = '';
 
-      if (!!options.rebase) {
+      if (Boolean(options.rebase)) {
         options.rebaseTo = path.dirname(file.dest);
       }
 
