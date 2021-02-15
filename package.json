@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "clean-css": "~5.0.1",
+    "clean-css": "^5.0.1",
     "maxmin": "^3.0.0"
   },
   "devDependencies": {
