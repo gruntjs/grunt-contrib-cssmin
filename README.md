@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v3.0.0 [![Build Status](https://github.com/gruntjs/grunt-contrib-cssmin/workflows/Tests/badge.svg)](https://github.com/gruntjs/grunt-contrib-cssmin/actions?workflow=Tests)
+# grunt-contrib-cssmin v4.0.0 [![Build Status](https://github.com/gruntjs/grunt-contrib-cssmin/workflows/Tests/badge.svg)](https://github.com/gruntjs/grunt-contrib-cssmin/actions?workflow=Tests)
 
 > Minify CSS
 
@@ -86,6 +86,7 @@ cssmin: {
 
 ## Release History
 
+ * 2021-02-15   v4.0.0   Update all dependencies including clean-css v5.x. Drop Node.js < 10 support.
  * 2018-09-07   v3.0.0   Update all dependencies. Drop Node.js < 6 support.
  * 2017-07-27   v2.2.1   Fix issue with `relativeTo` for clean-css v4.x.
  * 2017-05-10   v2.2.0   Update clean-css to v4.1.1.
@@ -122,4 +123,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Mon Feb 15 2021 07:23:28.*
+*This file was generated on Mon Feb 15 2021 07:31:26.*
