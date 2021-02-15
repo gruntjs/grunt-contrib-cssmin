@@ -1,4 +1,4 @@
-# grunt-contrib-cssmin v3.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-cssmin.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-cssmin) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/ntgfqc3ppk533m84/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-cssmin/branch/master)
+# grunt-contrib-cssmin v3.0.0 [![Build Status](https://github.com/gruntjs/grunt-contrib-cssmin/workflows/Tests/badge.svg)](https://github.com/gruntjs/grunt-contrib-cssmin/actions?workflow=Tests)
 
 > Minify CSS
 
@@ -122,4 +122,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Fri Sep 07 2018 02:52:44.*
+*This file was generated on Mon Feb 15 2021 07:23:28.*
