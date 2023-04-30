@@ -86,6 +86,7 @@ cssmin: {
 
 ## Release History
 
+ * 2023-05-01   v5.0.0   Update dependencies. Drop Node.js < 14 support.
  * 2021-02-15   v4.0.0   Update all dependencies including clean-css v5.x. Drop Node.js < 10 support.
  * 2018-09-07   v3.0.0   Update all dependencies. Drop Node.js < 6 support.
  * 2017-07-27   v2.2.1   Fix issue with `relativeTo` for clean-css v4.x.
@@ -123,4 +124,4 @@ cssmin: {
 
 Task submitted by [Tim Branyen](http://tbranyen.com/)
 
-*This file was generated on Mon Feb 15 2021 07:31:26.*
+*This is a generated file.*
